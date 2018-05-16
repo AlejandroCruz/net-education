@@ -1,3 +1,3 @@
-# net-education
+# Net Education
 
-VueJS CMS for educational test and record
+> CMS for educational test and record
