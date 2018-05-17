@@ -1,0 +1,12 @@
+==-=====================
+Alejandro Cruz
+Net Education
+Development log: 5/2018
+=====================-==
+
+# Notepad++ custom documentation language "Texto"
+{
+  - Ideal "Theme": Plastic Code Wrap
+  - Background color: {R:11 G:22 B:29}
+  -- Alt. BG color: {R:0 G:33 B:66}
+}
