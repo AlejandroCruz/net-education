@@ -7,3 +7,4 @@
 - node-sass
 - sass-loader
 - fontawesome
+- [vue-d2b](http://d2bjs.org)
