@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <font-awesome-icon icon="spinner" pulse />
-    <router-view/>
+    <!-- TODO: FA template -->
+    <!-- <font-awesome-icon icon="spinner" pulse /> -->
+    <main role="main">
+      <router-view/>
+    </main>
   </div>
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+// import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 export default {
   name: 'App',
   components: {
-    FontAwesomeIcon
+    // FontAwesomeIcon
   }
 }
 </script>
@@ -22,6 +25,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
