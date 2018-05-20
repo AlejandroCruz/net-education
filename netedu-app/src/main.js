@@ -7,7 +7,7 @@ import jQuery from 'jquery/dist/jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 
-global.jQuery = jQuery
+global.$jQuery = jQuery
 
 Vue.config.productionTip = false
 
