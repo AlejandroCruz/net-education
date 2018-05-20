@@ -1,20 +1,14 @@
 <template>
   <div id="app">
-    <font-awesome-icon :icon="icon" pulse />
+    <font-awesome-icon icon="spinner" pulse />
     <router-view/>
   </div>
 </template>
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-import { faSpinner } from '@fortawesome/fontawesome-free-solid'
 export default {
   name: 'App',
-  computed: {
-    icon () {
-      return faSpinner
-    }
-  },
   components: {
     FontAwesomeIcon
   }
