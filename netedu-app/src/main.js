@@ -3,12 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import jQuery from 'jquery/dist/jquery'
+import jQuery from 'jquery/dist/jquery.min'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 
-global.$jQuery = jQuery
+export const EventBus = new Vue()
 
+global.$jQuery = jQuery
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

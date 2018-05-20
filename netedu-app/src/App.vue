@@ -1,16 +1,27 @@
 <template>
   <div id="app">
+    <font-awesome-icon :icon="icon" pulse />
     <router-view/>
   </div>
 </template>
 
 <script>
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import { faSpinner } from '@fortawesome/fontawesome-free-solid'
 export default {
-  name: 'App'
+  name: 'App',
+  computed: {
+    icon () {
+      return faSpinner
+    }
+  },
+  components: {
+    FontAwesomeIcon
+  }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
