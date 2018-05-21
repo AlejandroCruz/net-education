@@ -1,8 +1,10 @@
 <template>
   <div id="dashboard-comp">
-    <link :href='chartLink' rel='stylesheet'>
-    <chart-pie :data='chartData' />
-  <!-- <div class="row">
+
+    <!-- <link :href='chartLink' rel='stylesheet'>
+    <chart-pie :data='chartData' :config='chartConfig' />-->
+
+  <div class="row">
 
   <div class="col-sm">
     <div class="card">
@@ -18,7 +20,7 @@
     </div>
   </div>
 
-  </div>-->
+  </div>
   </div>
 </template>
 
@@ -52,7 +54,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#dashboard-comp {
-  height: 350px;
+.card {
+  border: 0;
+
+  .chart{
+    width: inherit;
+    height: 300px;
+  }
 }
 </style>

@@ -1,10 +1,8 @@
 <template>
-  <div id="app">
-    <!-- TODO: FA template -->
+  <div id="app" class="container-fluid">
+    <!-- TODO:Reminder FA template -->
     <!-- <font-awesome-icon icon="spinner" pulse /> -->
-    <main role="main">
-      <router-view/>
-    </main>
+    <router-view/>
   </div>
 </template>
 
