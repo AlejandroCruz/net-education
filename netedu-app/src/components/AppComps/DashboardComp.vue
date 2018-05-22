@@ -2,13 +2,22 @@
   <div id="dashboard-comp">
     <div class="row">
 
-      <div class="col-sm">
+      <div class="col-md">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Dashboard</h5>
-            <div class='chart'>
-              <canvas id="first-chart" />
-            </div>
+            <canvas id="c1-chart"/>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Dashboard</h5>
+            <canvas id="c2-chart"/>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
@@ -35,7 +44,8 @@ export default {
   components: {
   },
   mounted () {
-    this.createChart('first-chart', this.firstChartData)
+    this.createChart('c1-chart', this.firstChartData)
+    this.createChart('c2-chart', this.firstChartData)
   },
   methods: {
     createChart (cId, cData) {
@@ -52,12 +62,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .card {
-//   border: 0;
+#dashboard-comp {
+  text-align: center;
 
-//   .chart{
-//     width: inherit;
-//     height: 300px;
-//   }
-// }
+  canvas {
+    margin: 0 auto;
+    max-width: 98%;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-md:first-child {
+    margin-bottom: 20px;
+  }
+}
 </style>
