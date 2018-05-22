@@ -2,7 +2,7 @@
   <div id="dashboard-comp">
 
     <!-- <link :href='chartLink' rel='stylesheet'>
-    <chart-pie :data='chartData' :config='chartConfig' />-->
+    <chart-pie :data='chartData' :config='pieChartConfig' />-->
 
   <div class="row">
 
@@ -10,7 +10,7 @@
     <div class="card">
       <div class='chart'>
         <link :href='chartLink' rel='stylesheet'>
-        <chart-pie :data='chartData' :config='chartConfig' />
+        <chart-pie :data='chartData' :config='pieChartConfig' />
       </div>
       <div class="card-body">
         <h5 class="card-title">{{ chartTitle }}</h5>
@@ -43,7 +43,10 @@ export default {
         { label: 'arc 4', value: 8 }
       ],
       chartTitle: 'Dashboard',
-      chartLink: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+      chartLink: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+      pieChartConfig: function (chart) {
+        chart.donutRatio(0.0).legend()
+      }
     }
   },
   components: {
