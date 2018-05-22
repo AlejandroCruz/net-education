@@ -1,68 +1,63 @@
 <template>
   <div id="dashboard-comp">
+    <div class="row">
 
-    <!-- <link :href='chartLink' rel='stylesheet'>
-    <chart-pie :data='chartData' :config='pieChartConfig' />-->
-
-  <div class="row">
-
-  <div class="col-sm">
-    <div class="card">
-      <div class='chart'>
-        <link :href='chartLink' rel='stylesheet'>
-        <chart-pie :data='chartData' :config='pieChartConfig' />
+      <div class="col-sm">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Dashboard</h5>
+            <div class='chart'>
+              <canvas id="first-chart" />
+            </div>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">{{ chartTitle }}</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+
     </div>
-  </div>
-
-  </div>
   </div>
 </template>
 
 <script>
-// import { data, resources } from './appcomps.config'
-import { ChartPie } from 'vue-d2b'
-// let aCD = {
-//   cData: data.appCompData,
-//   cTitle: 'Dashboard'
-// }
+import Chart from 'chart.js'
+import { data } from './appcomps.config'
+// import firstChartData from '../_chartsStore/firstChart'
 
 export default {
   name: 'DashboardComp',
   data () {
     return {
-      chartData: [
-        { label: 'arc 1', value: 23 },
-        { label: 'arc 2', value: 31 },
-        { label: 'arc 3', value: 80 },
-        { label: 'arc 4', value: 8 }
-      ],
-      chartTitle: 'Dashboard',
-      chartLink: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
-      pieChartConfig: function (chart) {
-        chart.donutRatio(0.0).legend()
-      }
+      firstChartData: data.c1Data,
+      firstChart: null
     }
   },
   components: {
-    // ChartAxis,
-    ChartPie
+  },
+  mounted () {
+    this.createChart('first-chart', this.firstChartData)
+  },
+  methods: {
+    createChart (cId, cData) {
+      const cElement = document.getElementById(cId)
+      // eslint-disable-next-line
+      const myChart = new Chart(cElement, {
+        type: cData.type,
+        data: cData.data,
+        options: cData.options
+      })
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.card {
-  border: 0;
+// .card {
+//   border: 0;
 
-  .chart{
-    width: inherit;
-    height: 300px;
-  }
-}
+//   .chart{
+//     width: inherit;
+//     height: 300px;
+//   }
+// }
 </style>

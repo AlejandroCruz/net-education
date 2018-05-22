@@ -1,8 +1,0 @@
-{
-  "ChartData": [
-    { "id": 1, "label": "arc 1", "value": 23 },
-    { "id": 2, "label": "arc 2", "value": 31 },
-    { "id": 3, "label": "arc 3", "value": 80 },
-    { "id": 4, "label": "arc 4", "value": 8 }
-  ]
-}

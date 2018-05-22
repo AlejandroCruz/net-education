@@ -1,15 +1,8 @@
-import primelogo from '@/assets/logo-prime.png'
-import appCompData from './dataModel'
+import pL from '@/assets/logo-prime.png'
+import fC from '../_chartFactory/firstChart'
 
-export function data () {
-  return {
-    appCompData: appCompData
-  }
+export const data = {
+  c1Data: fC
 }
 
-export function resources () {
-  return {
-    primaryLogo: primelogo,
-    chartDependencyLink: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
-  }
-}
+export const primaryLogo = pL
