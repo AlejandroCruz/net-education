@@ -31,21 +31,19 @@
 <script>
 import Chart from 'chart.js'
 import { data } from './appcomps.config'
-// import firstChartData from '../_chartsStore/firstChart'
 
 export default {
   name: 'DashboardComp',
   data () {
     return {
-      firstChartData: data.c1Data,
-      firstChart: null
+      c1ChartData: data.c1ChartData
     }
   },
   components: {
   },
   mounted () {
-    this.createChart('c1-chart', this.firstChartData)
-    this.createChart('c2-chart', this.firstChartData)
+    this.createChart('c1-chart', this.c1ChartData)
+    this.createChart('c2-chart', this.c1ChartData)
   },
   methods: {
     createChart (cId, cData) {

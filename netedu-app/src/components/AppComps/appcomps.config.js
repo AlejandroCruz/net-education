@@ -1,8 +1,8 @@
 import pL from '@/assets/logo-prime.png'
-import fC from '../_chartFactory/firstChart'
+import cD from '../_chartFactory/testChart'
 
 export const data = {
-  c1Data: fC
+  c1ChartData: cD
 }
 
 export const primaryLogo = pL
