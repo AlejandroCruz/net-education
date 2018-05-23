@@ -30,7 +30,7 @@
 
 <script>
 import Chart from 'chart.js'
-import { data } from './appcomps.config'
+import { data } from './dashboard.config'
 
 export default {
   name: 'DashboardComp',
@@ -61,8 +61,6 @@ export default {
 
 <style lang="scss" scoped>
 #dashboard-comp {
-  text-align: center;
-
   canvas {
     margin: 0 auto;
     max-width: 98%;

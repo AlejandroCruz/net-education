@@ -2,7 +2,7 @@
 import {
   EXTERNAL_DATA_1,
   EXTERNAL_DATA_2
-} from '@/virtualData'
+} from '@/VirtualData/virtualData'
 
 export const planetChartData = {
   type: 'line',

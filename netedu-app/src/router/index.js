@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import DashboardComp from '@/components/AppComps/DashboardComp'
+import DashboardComp from '@/components/DashboardComps/DashboardComp'
 
 Vue.use(Router)
 
