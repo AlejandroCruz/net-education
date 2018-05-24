@@ -1,5 +1,7 @@
 <template>
   <div class="hello">
+    <!-- TODO:Reminder FA template -->
+    <!-- <font-awesome-icon icon="spinner" pulse /> -->
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -84,12 +86,16 @@
 </template>
 
 <script>
+// import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components: {
+    // FontAwesomeIcon
   }
 }
 </script>

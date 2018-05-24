@@ -11,7 +11,13 @@ module.exports = {
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential', 
+    /*
+    'plugin:vue/base', // Settings and rules to enable correct ESLint parsing
+    'plugin:vue/essential', // Above, plus rules to prevent errors or unintended behavior
+    'plugin:vue/strongly-recommended', // Above, plus rules to considerably improve code readability and/or dev experience
+    'plugin:vue/recommended' // Above, plus rules to enforce subjective community defaults to ensure consistency
+    */
+    'plugin:vue/strongly-recommended',
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'standard'
   ],
@@ -24,6 +30,13 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    "vue/max-attributes-per-line": [0, {
+      "singleline": 4,
+      "multiline": {
+        "max": 1,
+        "allowFirstLine": true
+      }
+    }]
   }
 }
