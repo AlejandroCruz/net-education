@@ -5,14 +5,17 @@
         <img class="img-logo img-fluid" :src="logo.icon" :alt="logo.alt">
         <span>NetEducation</span>
       </a>
-      <!-- <app-sidenav/> -->
-      <app-topnav/>
+      <div id="navbarResponsive" class="collapse navbar-collapse">
+        <app-topnav/>
+        <app-sidenav/>
+      </div>
     </nav>
   </div>
 </template>
 
 <script>
 import AppTopnav from './AppTopnav'
+import AppSidenav from './AppSidenav'
 import { resources } from './app.config'
 
 export default {
@@ -27,7 +30,8 @@ export default {
     }
   },
   components: {
-    AppTopnav
+    AppTopnav,
+    AppSidenav
   }
 }
 </script>

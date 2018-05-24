@@ -7,10 +7,11 @@ CMS for educational test and record
 - bootstrap (jQuery, popper.js)
 - node-sass
 - sass-loader
-- fontawesome
+- node-sass-magic-importer
+- fontawesome [[⇗]](https://github.com/maoberlehner/node-sass-magic-importer/tree/master/packages/node-sass-magic-importer)
 - ~~d2b~~
 - chart.js
-- startbootstrap-sb-admin [[⇗]](https://github.com/BlackrockDigital/startbootstrap-sb-admin)
+- startbootstrap-sb-admin (using Font Awesome 4.7.0) [[⇗]](https://github.com/BlackrockDigital/startbootstrap-sb-admin)
 
 ### Sample:
 
