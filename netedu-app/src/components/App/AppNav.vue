@@ -3,15 +3,18 @@
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" :href="logo.address">
         <img class="img-logo img-fluid" :src="logo.icon" :alt="logo.alt">
+        <span>NetEducation</span>
       </a>
-      <!-- <app-sidenav/>
-      <app-topnav/> -->
+      <!-- <app-sidenav/> -->
+      <app-topnav/>
     </nav>
   </div>
 </template>
 
 <script>
+import AppTopnav from './AppTopnav'
 import { resources } from './app.config'
+
 export default {
   data () {
     return {
@@ -22,18 +25,28 @@ export default {
         toggleNav: null
       }
     }
+  },
+  components: {
+    AppTopnav
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '../../main.scss';
+
 nav {
   a:first-child {
-    padding: .3rem 1rem;
+    padding: 0.3125rem 1rem 0 0;
 
     img.img-logo{
       height: auto;
       width: 50px;
+    }
+    span {
+      color: $netedu-gold;
+      font-size: 1.4rem;
+      vertical-align: bottom;
     }
   }
 }
