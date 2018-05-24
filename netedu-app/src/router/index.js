@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import DashboardComp from '@/components/DashboardComps/DashboardComp'
+import DashboardContent from '@/components/Dashboard/DashboardContent'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'DashboardComp',
-      component: DashboardComp
+      name: 'DashboardContent',
+      component: DashboardContent
     }
   ]
 })

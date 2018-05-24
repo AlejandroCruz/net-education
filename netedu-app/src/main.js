@@ -8,6 +8,7 @@ import fontawesome from '@fortawesome/fontawesome'
 import faSolids from '@fortawesome/fontawesome-free-solid'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'startbootstrap-sb-admin/css/sb-admin.css'
 
 export const EventBus = new Vue()
 
