@@ -8,7 +8,7 @@ CMS for educational test and record
 - node-sass
 - sass-loader
 - fontawesome
-- ~~d2b.js~~
+- ~~d2b~~
 - chart.js
 - startbootstrap-sb-admin [[⇗]](https://github.com/BlackrockDigital/startbootstrap-sb-admin)
 
