@@ -45,7 +45,7 @@ nav {
 
     img.img-logo{
       height: auto;
-      width: 50px;
+      width: 2.25em;
     }
     span {
       color: $netedu-gold;

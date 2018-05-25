@@ -52,7 +52,7 @@ export default {
       }
 
       svg { // After ViewJS interpolation <i> converts to <svg>
-        width: 1.28571429em
+        width: 1.28571429em;
       }
   }
   #exampleAccordion li a[href*="form"] { // TODO: Delete test code
