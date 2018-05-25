@@ -50,6 +50,10 @@ export default {
       &:last-child {
         border-bottom: 1px solid #2a2f35;
       }
+
+      svg { // After ViewJS interpolation <i> converts to <svg>
+        width: 1.28571429em
+      }
   }
   #exampleAccordion li a[href*="form"] { // TODO: Delete test code
     color: $nav-dark-accent !important;
