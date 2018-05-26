@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container-fluid">
+  <div id="app">
     <AppNav/>
     <AppContent/>
   </div>
@@ -16,13 +16,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-// #app {
-//   -moz-osx-font-smoothing: grayscale;
-//   -webkit-font-smoothing: antialiased;
-//   color: #2c3e50;
-//   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-//   text-align: center;
-// }
-</style>
