@@ -7,7 +7,7 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Test Chart</li>
+        <li class="breadcrumb-item active">Chart</li>
       </ol>
 
       <router-view/>
