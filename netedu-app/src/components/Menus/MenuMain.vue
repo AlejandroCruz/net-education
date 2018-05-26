@@ -1,18 +1,11 @@
 <template>
   <div id="menu-main">
 
-    <ul id="exampleAccordion" class="navbar-nav navbar-sidenav" v-show="!showSkillsFormMenu">
+    <ul id="exampleAccordion" class="navbar-nav navbar-sidenav">
       <li v-for="item in menu" :key="item.id" class="nav-item" data-toggle="tooltip" data-placement="right">
         <a class="nav-link" :href="item.address">
           <i :class="item.icon"/>
           <span class="nav-link-text">{{ item.tab }}</span>
-        </a>
-      </li>
-    </ul>
-    <ul class="navbar-nav sidenav-toggler">
-      <li class="nav-item">
-        <a id="sidenavToggler" class="nav-link text-center" @click="sidenavToggler">
-          <i class="fa fa-fw fa-angle-left"/>
         </a>
       </li>
     </ul>

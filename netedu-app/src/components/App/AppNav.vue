@@ -1,5 +1,6 @@
 <template>
   <div id="app-nav">
+    <!-- The camelCase #id is required by startbootstrap-sb-admin -->
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" :href="logo.address">
         <img class="img-logo img-fluid" :src="logo.icon" :alt="logo.alt">
@@ -41,6 +42,7 @@ export default {
 
 nav {
   a:first-child {
+    margin-right: 0;
     padding: 0.3125rem 1rem 0 0;
 
     img.img-logo{
