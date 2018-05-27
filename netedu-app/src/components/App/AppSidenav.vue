@@ -42,9 +42,6 @@ export default {
         elementST.add('fa-angle-left')
         this.toggleSidenav = true
       }
-
-      // TODO: Test store module
-      this.$store.commit('setToggleSidenav', this.toggleSidenav)
     }
   }
 }

@@ -13,3 +13,14 @@ export default {
     }
   }
 }
+
+// methods: {
+//   mutateEvent () {
+//     this.$store.commit('setToggleSidenav', this.toggleSidenav)
+//   },
+//   getEvent () {
+//     console.log('\\src\\components\\App\\AppNav.vue --> should say true:')
+//     console.log(this.$store.getters.getToggleSidenav)
+//     console.log('<--')
+//   }
+// }
