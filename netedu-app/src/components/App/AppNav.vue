@@ -2,7 +2,7 @@
   <div id="app-nav">
     <!-- The camelCase #id is required by startbootstrap-sb-admin -->
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" :href="logo.address">
+      <a class="navbar-brand" :href="logo.address" @click="testStoreModule">
         <img class="img-logo img-fluid" :src="logo.icon" :alt="logo.alt">
         <span>NetEducation</span>
       </a>
@@ -33,6 +33,13 @@ export default {
   components: {
     AppTopnav,
     AppSidenav
+  },
+  methods: {
+    testStoreModule () {
+      console.log('\\src\\components\\App\\AppNav.vue --> should say true:')
+      console.log(this.$store.getters.getToggleSidenav)
+      console.log('<--')
+    }
   }
 }
 </script>

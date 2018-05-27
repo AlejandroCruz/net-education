@@ -6,6 +6,7 @@ import router from './router'
 import jQuery from 'jquery/dist/jquery.min'
 import fontawesome from '@fortawesome/fontawesome'
 import faSolids from '@fortawesome/fontawesome-free-solid'
+import { store } from './store/index'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'startbootstrap-sb-admin/css/sb-admin.css'
@@ -20,6 +21,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

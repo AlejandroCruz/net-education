@@ -1,5 +1,6 @@
 <template>
   <div id="app-sidenav">
+
     <MenuMain/>
 
     <ul class="navbar-nav sidenav-toggler">
@@ -27,20 +28,23 @@ export default {
   },
   methods: {
     sidenavToggler () {
-      let bST = document.body.classList
-      let sT = document.getElementById('sidenavToggler').childNodes[0].classList
+      let elementB = document.body.classList
+      let elementST = document.getElementById('sidenavToggler').childNodes[0].classList
 
       if (this.toggleSidenav) {
-        bST.add('sidenav-toggled')
-        sT.remove('fa-angle-left')
-        sT.add('fa-angle-right')
+        elementB.add('sidenav-toggled')
+        elementST.remove('fa-angle-left')
+        elementST.add('fa-angle-right')
         this.toggleSidenav = false
       } else {
-        bST.remove('sidenav-toggled')
-        sT.remove('fa-angle-right')
-        sT.add('fa-angle-left')
+        elementB.remove('sidenav-toggled')
+        elementST.remove('fa-angle-right')
+        elementST.add('fa-angle-left')
         this.toggleSidenav = true
       }
+
+      // TODO: Test store module
+      this.$store.commit('setToggleSidenav', this.toggleSidenav)
     }
   }
 }

@@ -8,7 +8,7 @@ export default {
     }
   },
   getters: {
-    toggleSidenav (state) {
+    getToggleSidenav (state) {
       return state.toggleSidenav
     }
   }
