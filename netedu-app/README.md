@@ -9,7 +9,7 @@ CMS for educational test and record
 - sass-loader
 - fontawesome [[⇗]](https://github.com/maoberlehner/node-sass-magic-importer/tree/master/packages/node-sass-magic-importer)
 - ~~d2bJS~~
-- chart.js
+- chart.js [[⇗]](https://www.chartjs.org/)
 - startbootstrap-sb-admin (using Font Awesome 4.7.0) [[⇗]](https://github.com/BlackrockDigital/startbootstrap-sb-admin)
 - vuex
 

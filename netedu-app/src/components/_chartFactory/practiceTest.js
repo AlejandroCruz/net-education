@@ -1,4 +1,3 @@
-// TODO: API data injection
 import {
   EXTERNAL_DATA_1,
   EXTERNAL_DATA_2

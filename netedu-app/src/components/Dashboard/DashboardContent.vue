@@ -4,25 +4,24 @@
 
       <div class="col-md">
         <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Dashboard</h5>
+          <div class="card-body" v-for="item in charts" :key="item.id">
+            <h5 class="card-title">{{ item.Title }}</h5>
             <canvas id="c1-chart"/>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>
-
-      <div class="col-md">
+      <!-- <div class="col-md">
         <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Dashboard</h5>
-            <canvas id="c2-chart"/>
+          <div class="card-body" v-for="item in charts" :key="item.id">
+            <h5 class="card-title">{{ item.Title }}</h5>
+            <canvas id="c{item.id}-chart"/>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </div>
@@ -30,20 +29,23 @@
 
 <script>
 import Chart from 'chart.js'
-import { data } from './dashboard.config'
+import { chartData } from './dashboard.config'
 
 export default {
   name: 'DashboardComp',
   data () {
     return {
-      c1ChartData: data.c1ChartData
+      charts: [
+        { id: 1, cData: chartData.c1Data, cTitle: 'Test pending' },
+        { id: 2, cData: chartData.c2Data, cTitle: 'Practice Test' }
+      ]
     }
   },
   components: {
   },
   mounted () {
-    this.createChart('c1-chart', this.c1ChartData)
-    this.createChart('c2-chart', this.c1ChartData)
+    this.createChart('c1-chart', this.charts[0].cData)
+    this.createChart('c2-chart', this.charts[1].cData)
   },
   methods: {
     createChart (cId, cData) {
