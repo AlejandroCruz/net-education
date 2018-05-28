@@ -6,10 +6,10 @@ import {
 export const planetChartData = {
   type: 'pie',
   data: {
-    labels: ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'],
+    labels: ['January', 'March', 'May', 'July', 'September', 'November'],
     datasets: [
       { // one line graph
-        label: 'Number of Moons',
+        label: 'Student Avg.',
         data: EXTERNAL_DATA_1,
         backgroundColor: [
           'rgba(54,73,93,.5)', // Blue
@@ -34,7 +34,7 @@ export const planetChartData = {
         borderWidth: 3
       },
       { // another line graph
-        label: 'Planet Mass (x1,000 km)',
+        label: 'State Avg.',
         data: EXTERNAL_DATA_2,
         backgroundColor: [
           'rgba(71, 183,132,.5)' // Green
