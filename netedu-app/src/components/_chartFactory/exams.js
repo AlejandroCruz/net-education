@@ -4,7 +4,7 @@ import {
 } from '@/VirtualData/virtualData'
 
 export const planetChartData = {
-  type: 'bar',
+  type: 'pie',
   data: {
     labels: ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'],
     datasets: [
