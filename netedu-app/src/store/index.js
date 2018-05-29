@@ -1,10 +1,10 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
-import menus from './components/Menus/store/menus'
+import menus from '@/components/Menus/store/menus'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+export const store = new Vuex.Store({
   modules: {
     menus
   },
@@ -12,7 +12,6 @@ export default new Vuex.Store({
   },
   mutations: {
   },
-  actions,
   getters: {
   }
 })
