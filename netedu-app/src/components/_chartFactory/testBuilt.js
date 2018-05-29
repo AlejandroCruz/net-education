@@ -9,35 +9,24 @@ export const planetChartData = {
     labels: ['January', 'March', 'May', 'July', 'September', 'November'],
     datasets: [
       { // one line graph
-        label: 'Enrolled',
+        label: 'Student Avg.',
         data: EXTERNAL_DATA_1,
         backgroundColor: [
-          'rgba(54,73,93,.5)', // Blue
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)'
+          '#3985a880' // Blue
         ],
         borderColor: [
-          '#36495d',
-          '#36495d',
-          '#36495d',
-          '#36495d',
-          '#36495d',
           '#36495d'
         ],
         borderWidth: 3
       },
       { // another line graph
-        label: 'Pending',
+        label: 'State Avg.',
         data: EXTERNAL_DATA_2,
         backgroundColor: [
           'rgba(71, 183,132,.5)' // Green
         ],
         borderColor: [
-          '#47b784'
+          '#39996c'
         ],
         borderWidth: 3
       }

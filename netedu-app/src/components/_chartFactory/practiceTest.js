@@ -1,6 +1,6 @@
 import {
-  EXTERNAL_DATA_1,
-  EXTERNAL_DATA_2
+  EXTERNAL_DATA_3,
+  EXTERNAL_DATA_4
 } from '@/VirtualData/virtualData'
 
 export const planetChartData = {
@@ -9,21 +9,17 @@ export const planetChartData = {
     labels: ['January', 'March', 'May', 'July', 'September', 'November'],
     datasets: [
       { // one line graph
-        label: 'Student Avg.',
-        data: EXTERNAL_DATA_1,
+        label: 'Practice',
+        data: EXTERNAL_DATA_3,
         backgroundColor: [
-          'rgba(54,73,93,.5)', // Blue
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)',
-          'rgba(54,73,93,.5)'
+          '#3985a880', // Blue
+          '#3985a880',
+          '#3985a880',
+          '#3985a880',
+          '#3985a880',
+          '#3985a880'
         ],
         borderColor: [
-          '#36495d',
-          '#36495d',
           '#36495d',
           '#36495d',
           '#36495d',
@@ -34,13 +30,23 @@ export const planetChartData = {
         borderWidth: 3
       },
       { // another line graph
-        label: 'State Avg.',
-        data: EXTERNAL_DATA_2,
+        label: 'Exam',
+        data: EXTERNAL_DATA_4,
         backgroundColor: [
-          'rgba(71, 183,132,.5)' // Green
+          'rgba(71, 183,132,.5)',
+          'rgba(71, 183,132,.5)',
+          'rgba(71, 183,132,.5)',
+          'rgba(71, 183,132,.5)',
+          'rgba(71, 183,132,.5)',
+          'rgba(71, 183,132,.5)'
         ],
         borderColor: [
-          '#47b784'
+          '#39996c',
+          '#39996c',
+          '#39996c',
+          '#39996c',
+          '#39996c',
+          '#39996c'
         ],
         borderWidth: 3
       }

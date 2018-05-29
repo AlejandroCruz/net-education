@@ -15,4 +15,4 @@ CMS for educational test and record
 
 ### Sample:
 
-![screenshot201805242230](_devdir/img/screenshot201805242230.png)
+![screenshot201805242230](_devdir/img/screenshot201805291700.png)
