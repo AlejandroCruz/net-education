@@ -1,10 +1,14 @@
 <template>
   <div id="lesson-build-content">
-    <p>Lesson Builder</p>
+    <lesson-new/>
   </div>
 </template>
 
 <script>
+import LessonNew from '@/components/LessonBuilder/LessonNew'
 export default {
+  components: {
+    LessonNew
+  }
 }
 </script>

@@ -2,13 +2,13 @@
   <div id="app-content" class="content-wrapper">
     <div class="container-fluid">
 
-      <!-- Breadcrumbs-->
+      <!-- Breadcrumbs
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Chart</li>
-      </ol>
+      </ol> -->
 
       <router-view/>
 
