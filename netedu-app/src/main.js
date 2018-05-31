@@ -11,8 +11,6 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'startbootstrap-sb-admin/css/sb-admin.css'
 
-export const EventBus = new Vue()
-
 fontawesome.library.add(faSolids)
 global.$jQuery = jQuery
 Vue.config.productionTip = false
@@ -25,3 +23,5 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+export const EventBus = new Vue()

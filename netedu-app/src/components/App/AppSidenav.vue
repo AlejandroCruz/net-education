@@ -28,18 +28,18 @@ export default {
   },
   methods: {
     sidenavToggler () {
-      let elementB = document.body.classList
-      let elementST = document.getElementById('sidenavToggler').childNodes[0].classList
+      let elB = document.body.classList
+      let elST = document.getElementById('sidenavToggler').childNodes[0].classList
 
       if (this.toggleSidenav) {
-        elementB.add('sidenav-toggled')
-        elementST.remove('fa-angle-left')
-        elementST.add('fa-angle-right')
+        elB.add('sidenav-toggled')
+        elST.remove('fa-angle-left')
+        elST.add('fa-angle-right')
         this.toggleSidenav = false
       } else {
-        elementB.remove('sidenav-toggled')
-        elementST.remove('fa-angle-right')
-        elementST.add('fa-angle-left')
+        elB.remove('sidenav-toggled')
+        elST.remove('fa-angle-right')
+        elST.add('fa-angle-left')
         this.toggleSidenav = true
       }
     }

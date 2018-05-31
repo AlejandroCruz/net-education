@@ -19,8 +19,8 @@ export default {
     return {
       menu: [
         { id: 0, tab: 'Dashboard', address: '/#/dashboard', icon: 'fa fa-tachometer-alt' },
-        { id: 1, tab: 'Test Builder', address: '/#/test-builder', icon: 'fa fa-cogs' },
-        { id: 2, tab: 'Practice', address: '/#/practice', icon: 'fa fa-pencil-alt' },
+        { id: 1, tab: 'Lesson Builder', address: '/#/lesson-builder', icon: 'fa fa-cogs' },
+        // { id: 2, tab: 'Practice', address: '/#/practice', icon: 'fa fa-pencil-alt' },
         { id: 3, tab: 'Exam', address: '/#/exam', icon: 'fa fa-clipboard' },
         { id: 4, tab: 'Skills>Form Dev', address: '/#/app/skills-form', icon: 'fa fa-ban' }
       ]
