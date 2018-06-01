@@ -25,3 +25,23 @@
 //     console.log('<--')
 //   }
 // }
+export default {
+  state: {
+    lessonBuildData: {}
+  },
+  mutations: {
+    setLessonBuildData (state, payload) {
+      state.lessonBuildData.add = payload
+    }
+  },
+  actions: {
+    setLessonBuildData (context) {
+      context.commit('setLessonBuildData')
+    }
+  },
+  getters: {
+    getLessonBuildData (state) {
+      return state.lessonBuildData
+    }
+  }
+}

@@ -1,12 +1,12 @@
 <template>
-  <div id="lesson-new" class="card">
+  <div id="lesson-new" class="card text-center">
 
-    <div class="class-header">
+    <div class="card-header">
       <ul class="nav nav-pills card-header-pills">
         <li class="nav-item" v-for="item in headings" :key="item.id">
           <span
             :id="'skillsNewHeading-'+item.id"
-            :class="{ active:item.id == subCompIndex }"
+            :class="{ active:item.id === subCompIndex }"
             class="nav-link">
             {{ item.id }}. {{ item.label }}
           </span>
@@ -15,12 +15,16 @@
     </div>
 
     <div class="card-body">
-      <div v-if="subCompIndex == headings[0].id">
+      <div v-if="compareIndexToHeadings(0)">
         <LessonGrades/>
       </div>
-      <div v-if="subCompIndex == headings[1].id">
+      <div v-if="compareIndexToHeadings(1)">
         <LessonSubjects/>
       </div>
+    </div>
+
+    <div class="cardFooter">
+      Footer
     </div>
 
   </div>
@@ -35,11 +39,17 @@ export default {
   data () {
     return {
       headings: null,
-      subCompIndex: 1
+      subCompIndex: 1,
+      counter: 0
     }
   },
-  mounted () {
+  created () {
     this.headings = Lesson.Headings
+  },
+  methods: {
+    compareIndexToHeadings (h) {
+      return this.subCompIndex === this.headings[h].id
+    }
   },
   components: {
     LessonGrades,
