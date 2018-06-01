@@ -15,6 +15,8 @@ fontawesome.library.add(faSolids)
 global.$jQuery = jQuery
 Vue.config.productionTip = false
 
+export const EventBus = new Vue()
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -23,5 +25,3 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-
-export const EventBus = new Vue()

@@ -1,45 +1,27 @@
-/* From a deprecated test */
-// export default {
-//   state: {
-//     toggleSidenav: null
-//   },
-//   mutations: {
-//     setToggleSidenav (state, payload) {
-//       state.toggleSidenav = payload
-//     }
-//   },
-//   getters: {
-//     getToggleSidenav (state) {
-//       return state.toggleSidenav
-//     }
-//   }
-// }
-
-// methods: {
-//   mutateEvent () {
-//     this.$store.commit('setToggleSidenav', this.toggleSidenav)
-//   },
-//   getEvent () {
-//     console.log('\\src\\components\\App\\AppNav.vue --> should say true:')
-//     console.log(this.$store.getters.getToggleSidenav)
-//     console.log('<--')
-//   }
-// }
 export default {
   state: {
-    lessonBuildData: {}
+    lessonGrade: null,
+    lessonBuildData: null
   },
   mutations: {
+    setLessonGrade (state, payload) {
+      state.lessonGrade = payload
+    },
     setLessonBuildData (state, payload) {
-      state.lessonBuildData.add = payload
     }
   },
   actions: {
-    setLessonBuildData (context) {
-      context.commit('setLessonBuildData')
+    setLessonGrade ({ commit }, e) {
+      commit('setLessonGrade', e)
+    },
+    setLessonBuildData ({ commit }, e) {
+      commit('setLessonBuildData', e)
     }
   },
   getters: {
+    getLessonGrade (state) {
+      return state.lessonGrade
+    },
     getLessonBuildData (state) {
       return state.lessonBuildData
     }

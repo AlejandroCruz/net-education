@@ -14,6 +14,7 @@
 
 <script>
 import { Lesson } from './lessonDataModules'
+import { EventBus } from '@/main'
 
 export default {
   data () {
@@ -23,10 +24,8 @@ export default {
   },
   methods: {
     gradeEvent (e) {
-      this.$store.dispatch('setLessonBuildData', { 'grade': e })
-      console.log('LessonGrades>gradeEvent -->')
-      console.log(this.$store.getters.getLessonBuildData)
-      console.log('<--')
+      EventBus.$emit('gradeSelected', e)
+      this.$store.dispatch('setLessonGrade', { 'grade': e })
     }
   }
 }

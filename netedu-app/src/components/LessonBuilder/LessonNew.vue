@@ -5,7 +5,7 @@
       <ul class="nav nav-pills card-header-pills">
         <li class="nav-item" v-for="item in headings" :key="item.id">
           <span
-            :id="'skillsNewHeading-'+item.id"
+            :id="'lessonNewHeading-'+item.id"
             :class="{ active:item.id === subCompIndex }"
             class="nav-link">
             {{ item.id }}. {{ item.label }}
@@ -24,7 +24,25 @@
     </div>
 
     <div class="cardFooter">
-      Footer
+      <p>Footer
+        <span v-if="lessonGrade" class="card-text">{{ lessonGrade }}</span>
+      </p>
+      <!-- <a
+        class="btn btn-primary"
+        href="#"
+        v-on:click="prevSubComp"
+        :class="{btnDisable: isOverflowPrev}">Previous</a>
+      <a
+        class="btn btn-primary"
+        v-if="isSkillsNewComplete"
+        :href="linkSkillForm">Finish</a>
+      <a
+        class="btn btn-primary"
+        href="#"
+        ref="skillsNext"
+        v-on:click="nextSubComp"
+        :class="{btnDisable: isOverflowNext}"
+        :disabled="elementDisable">Next</a> -->
     </div>
 
   </div>
@@ -34,21 +52,50 @@
 import LessonGrades from './LessonGrades'
 import LessonSubjects from './LessonSubjects'
 import { Lesson } from './lessonDataModules'
+import { EventBus } from '@/main'
 
 export default {
   data () {
     return {
       headings: null,
-      subCompIndex: 1,
-      counter: 0
+      lessonGrade: null,
+      lessonSubject: null,
+      lessonNewCompleteArr: [
+        {lessonGradeHasValue: ''},
+        {lessonSubjectHasValue: ''},
+        {lessonLectureHasValue: ''},
+        {lessonTitleHasValue: ''},
+        {lessonCodeHasValue: ''}
+      ],
+      subCompIndex: 1
     }
   },
   created () {
     this.headings = Lesson.Headings
   },
+  mounted () {
+    this.eventGradeSelected()
+  },
+  watch: {
+    lessonGrade () {
+      console.log('LessonNew>watch --> this.lessonGrade:')
+      console.log(this.lessonGrade)
+      console.log('<--')
+      // this.lessonGrade = this.$store.getters.getLessonGrade
+    }
+  },
   methods: {
     compareIndexToHeadings (h) {
       return this.subCompIndex === this.headings[h].id
+    },
+    eventGradeSelected () {
+      EventBus.$on('gradeSelected', (e) => {
+        this.lessonGrade = e
+        this.lessonNewCompleteArr[0] = true
+        console.log('LessonNew>eventGradeSelected --> this.lessonGrade:')
+        console.log(e)
+        console.log('<--')
+      })
     }
   },
   components: {
