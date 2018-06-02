@@ -24,25 +24,29 @@
     </div>
 
     <div class="cardFooter">
-      <p>Footer
-        <span v-if="lessonGrade" class="card-text">{{ lessonGrade }}</span>
+      <p>
+        <span v-if="lessonGrade" class="card-text">
+          {{ jsonKey }}: {{ jsonVal }}
+        </span>
       </p>
-      <!-- <a
-        class="btn btn-primary"
-        href="#"
-        v-on:click="prevSubComp"
-        :class="{btnDisable: isOverflowPrev}">Previous</a>
       <a
         class="btn btn-primary"
+        href="#"
+        @click="prevSubComp"
+        :class="{btnDisable: isOverflowPrev}">Previous
+      </a>
+      <!-- <a
+        class="btn btn-primary"
         v-if="isSkillsNewComplete"
-        :href="linkSkillForm">Finish</a>
+        :href="linkSkillForm">Finish</a> -->
       <a
         class="btn btn-primary"
         href="#"
         ref="skillsNext"
-        v-on:click="nextSubComp"
+        @click="nextSubComp"
         :class="{btnDisable: isOverflowNext}"
-        :disabled="elementDisable">Next</a> -->
+        :disabled="elementDisable">Next
+      </a>
     </div>
 
   </div>
@@ -60,7 +64,12 @@ export default {
       headings: null,
       lessonGrade: null,
       lessonSubject: null,
-      lessonNewCompleteArr: [
+      elementDisable: null,
+      isOverflowPrev: null,
+      isOverflowNext: null,
+      jsonKey: null,
+      jsonVal: null,
+      lessonNewComplete: [
         {lessonGradeHasValue: ''},
         {lessonSubjectHasValue: ''},
         {lessonLectureHasValue: ''},
@@ -76,26 +85,47 @@ export default {
   mounted () {
     this.eventGradeSelected()
   },
-  watch: {
-    lessonGrade () {
-      console.log('LessonNew>watch --> this.lessonGrade:')
-      console.log(this.lessonGrade)
-      console.log('<--')
-      // this.lessonGrade = this.$store.getters.getLessonGrade
-    }
-  },
   methods: {
     compareIndexToHeadings (h) {
       return this.subCompIndex === this.headings[h].id
     },
     eventGradeSelected () {
       EventBus.$on('gradeSelected', (e) => {
-        this.lessonGrade = e
-        this.lessonNewCompleteArr[0] = true
-        console.log('LessonNew>eventGradeSelected --> this.lessonGrade:')
-        console.log(e)
-        console.log('<--')
+        this._lessonGradeStore(e)
+          .then(this._lessonGradeVal())
+          .then(this._jsonKeyVal(this.lessonGrade))
       })
+    },
+    nextSubComp () {
+      this.isOverflowPrev = false
+      if (this.subCompIndex >= this.headings.length) {
+        this.elementDisable = 'disabled'
+        this.isOverflowNext = true
+        return
+      }
+      this.subCompIndex++
+    },
+    prevSubComp () {
+      this.isOverflowNext = false
+      if (this.subCompIndex <= 1) {
+        this.elementDisable = 'disabled'
+        this.isOverflowPrev = true
+        return
+      }
+      this.subCompIndex--
+    },
+    _jsonKeyVal (jObj) {
+      this.jsonKey = Object.keys(jObj)[0]
+      this.jsonVal = jObj[this.jsonKey]
+    },
+    _lessonGradeStore (e) {
+      return new Promise(resolve => {
+        this.$store.dispatch('setLessonGrade', { 'Grade': e })
+      })
+    },
+    _lessonGradeVal () {
+      this.lessonGrade = this.$store.getters.getLessonGrade
+      this.lessonNewComplete[0] = true
     }
   },
   components: {
@@ -104,3 +134,21 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.cardFooter {
+  clear: left;
+  padding-top: 40px;
+
+  p {
+    // background-color: greenyellow;
+    // border-radius: .25rem;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+  }
+}
+.btnDisable {
+  background-color: #0160c6;
+}
+</style>

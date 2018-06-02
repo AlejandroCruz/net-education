@@ -25,7 +25,6 @@ export default {
   methods: {
     gradeEvent (e) {
       EventBus.$emit('gradeSelected', e)
-      this.$store.dispatch('setLessonGrade', { 'grade': e })
     }
   }
 }
