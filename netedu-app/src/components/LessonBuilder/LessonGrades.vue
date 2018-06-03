@@ -45,6 +45,7 @@ export default {
   width: 10%;
 
   &:hover {
+    cursor: pointer;
     background-color: $netedu-red-hover;
     border-color: $netedu-red-hover-border;
   }

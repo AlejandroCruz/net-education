@@ -115,7 +115,7 @@ export default {
       this.subCompIndex--
     },
     _jsonKeyVal ( jObj ) {
-      this.jsonKey = Object.keys( jObj )[0]
+      this.jsonKey = Object.keys( jObj )[ 0 ]
       this.jsonVal = jObj[ this.jsonKey ]
     },
     _lessonGradeStore ( e ) {
@@ -141,8 +141,6 @@ export default {
   padding-top: 40px;
 
   p {
-    // background-color: greenyellow;
-    // border-radius: .25rem;
     font-weight: bold;
     padding: 10px;
     text-align: left;
