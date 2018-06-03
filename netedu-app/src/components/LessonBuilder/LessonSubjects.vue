@@ -3,7 +3,9 @@
     <h2 class="card-title">Please select subject:</h2>
 
     <div v-for="item in subjects" :key="item.id">
-      <div class="netedu-content-tab">
+      <div
+        class="netedu-content-tab"
+        @click="subjectEvent(item.label)">
         {{ item.label }}
       </div>
     </div>
@@ -12,11 +14,17 @@
 
 <script>
 import { Lesson } from './lessonDataModules'
+import { EventBus } from '@/main'
 
 export default {
   data () {
     return {
       subjects: Lesson.Subjects
+    }
+  },
+  methods: {
+    subjectEvent ( e ) {
+      EventBus.$emit( 'subjectSelected', e )
     }
   }
 }

@@ -5,7 +5,7 @@
       <ul class="nav nav-pills card-header-pills">
         <li class="nav-item" v-for="item in headings" :key="item.id">
           <span
-            :id="'lessonNewHeading-'+item.id"
+            :id="'lessonNewHeading-' + item.id"
             :class="{active:item.id === subCompIndex}"
             class="nav-link">
             {{ item.id}}. {{ item.label }}
@@ -25,9 +25,8 @@
 
     <div class="cardFooter">
       <p>
-        <span v-if="lessonGrade" class="card-text">
-          {{ jsonKey }}: {{ jsonVal }}
-        </span>
+        <span v-if="lessonGrade" class="card-text">{{ propKeyGrade }}: {{ lessonGrade.Grade }}</span>
+        <span v-if="lessonSubject" class="card-text">> {{ propKeySubject }}: {{ lessonSubject.Subject }}</span>
       </p>
       <a
         class="btn btn-primary"
@@ -64,6 +63,8 @@ export default {
       headings: null,
       lessonGrade: null,
       lessonSubject: null,
+      propKeyGrade: null,
+      propKeySubject: null,
       elementDisable: null,
       isOverflowPrev: null,
       isOverflowNext: null,
@@ -84,6 +85,7 @@ export default {
   },
   mounted () {
     this.eventGradeSelected()
+    this.eventSubjectSelected()
   },
   methods: {
     compareIndexToHeadings ( h ) {
@@ -93,7 +95,14 @@ export default {
       EventBus.$on('gradeSelected', ( e ) => {
         this._lessonGradeStore( e )
           .then( this._lessonGradeVal())
-          .then( this._jsonKeyVal( this.lessonGrade ))
+          .then( this._propKeyGrade( this.lessonGrade ))
+      })
+    },
+    eventSubjectSelected () {
+      EventBus.$on('subjectSelected', ( e ) => {
+        this._lessonSubjectStore( e )
+          .then( this._lessonSubjectVal())
+          .then( this._propKeySubject( this.lessonSubject ))
       })
     },
     nextSubComp () {
@@ -114,17 +123,28 @@ export default {
       }
       this.subCompIndex--
     },
-    _jsonKeyVal ( jObj ) {
-      this.jsonKey = Object.keys( jObj )[ 0 ]
-      this.jsonVal = jObj[ this.jsonKey ]
+    _propKeyGrade ( jObj ) {
+      this.propKeyGrade = Object.keys( jObj )[ 0 ]
+    },
+    _propKeySubject ( jObj ) {
+      this.propKeySubject = Object.keys( jObj )[ 0 ]
     },
     _lessonGradeStore ( e ) {
       return new Promise( resolve => {
         this.$store.dispatch('setLessonGrade', { 'Grade': e })
       })
     },
+    _lessonSubjectStore ( e ) {
+      return new Promise( resolve => {
+        this.$store.dispatch('setLessonSubject', { 'Subject': e })
+      })
+    },
     _lessonGradeVal () {
       this.lessonGrade = this.$store.getters.getLessonGrade
+      this.lessonNewComplete[ 0 ] = true
+    },
+    _lessonSubjectVal () {
+      this.lessonSubject = this.$store.getters.getLessonSubject
       this.lessonNewComplete[ 0 ] = true
     }
   },
