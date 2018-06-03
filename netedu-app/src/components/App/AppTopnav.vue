@@ -31,7 +31,7 @@
       }
     }
   }
-  ul:nth-child(2) {
+  ul:nth-child( 2 ) {
     float: right;
     margin-left: auto;
   }

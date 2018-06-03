@@ -4,25 +4,25 @@ export default {
     lessonBuildData: null
   },
   mutations: {
-    setLessonGrade (state, payload) {
+    setLessonGrade ( state, payload ) {
       state.lessonGrade = payload
     },
-    setLessonBuildData (state, payload) {
+    setLessonBuildData ( state, payload ) {
     }
   },
   actions: {
-    setLessonGrade ({ commit }, e) {
-      commit('setLessonGrade', e)
+    setLessonGrade ({ commit }, e ) {
+      commit( 'setLessonGrade', e )
     },
-    setLessonBuildData ({ commit }, e) {
-      commit('setLessonBuildData', e)
+    setLessonBuildData ({ commit }, e ) {
+      commit( 'setLessonBuildData', e )
     }
   },
   getters: {
-    getLessonGrade (state) {
+    getLessonGrade ( state ) {
       return state.lessonGrade
     },
-    getLessonBuildData (state) {
+    getLessonBuildData ( state ) {
       return state.lessonBuildData
     }
   }

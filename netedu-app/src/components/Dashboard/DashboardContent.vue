@@ -5,8 +5,8 @@
       <div class="col-md">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{ charts[0].cTitle }}</h5>
-            <canvas :id="charts[0].id"/>
+            <h5 class="card-title">{{ charts[ 0 ].cTitle }}</h5>
+            <canvas :id="charts[ 0 ].id"/>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
           </div>
@@ -16,8 +16,8 @@
       <div class="col-md">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{ charts[1].cTitle }}</h5>
-            <canvas :id="charts[1].id"/>
+            <h5 class="card-title">{{ charts[ 1 ].cTitle }}</h5>
+            <canvas :id="charts[ 1 ].id"/>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
           </div>
@@ -43,14 +43,14 @@ export default {
     }
   },
   mounted () {
-    this.createChart('c1-chart', this.charts[0].cData)
-    this.createChart('c2-chart', this.charts[1].cData)
+    this.createChart( 'c1-chart', this.charts[ 0 ].cData )
+    this.createChart( 'c2-chart', this.charts[ 1 ].cData )
   },
   methods: {
-    createChart (cId, cData) {
-      const cElement = document.getElementById(cId)
+    createChart ( cId, cData ) {
+      const cElement = document.getElementById( cId )
       // eslint-disable-next-line
-      const myChart = new Chart(cElement, {
+      const myChart = new Chart( cElement, {
         type: cData.type,
         data: cData.data,
         options: cData.options
@@ -68,7 +68,7 @@ export default {
   }
 }
 
-@media (min-width: 576px) {
+@media ( min-width: 576px ) {
   .col-md:first-child {
     margin-bottom: 20px;
   }

@@ -24,7 +24,7 @@ export default {
     return {
       logo: {
         address: '/#/',
-        alt: 'Net Education (icon)',
+        alt: 'Net Education ( icon )',
         icon: resources.primaryLogo,
         toggleNav: null
       }
@@ -45,7 +45,7 @@ nav {
     margin-right: 0;
     padding: 0.3125rem 1rem 0 0;
 
-    img.img-logo{
+    img.img-logo {
       height: auto;
       width: 2.25em;
     }

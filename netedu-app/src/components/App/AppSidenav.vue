@@ -29,17 +29,17 @@ export default {
   methods: {
     sidenavToggler () {
       let elB = document.body.classList
-      let elST = document.getElementById('sidenavToggler').childNodes[0].classList
+      let elST = document.getElementById( 'sidenavToggler' ).childNodes[ 0 ].classList
 
       if (this.toggleSidenav) {
-        elB.add('sidenav-toggled')
-        elST.remove('fa-angle-left')
-        elST.add('fa-angle-right')
+        elB.add( 'sidenav-toggled' )
+        elST.remove( 'fa-angle-left' )
+        elST.add( 'fa-angle-right' )
         this.toggleSidenav = false
       } else {
-        elB.remove('sidenav-toggled')
-        elST.remove('fa-angle-right')
-        elST.add('fa-angle-left')
+        elB.remove( 'sidenav-toggled' )
+        elST.remove( 'fa-angle-right' )
+        elST.add( 'fa-angle-left' )
         this.toggleSidenav = true
       }
     }

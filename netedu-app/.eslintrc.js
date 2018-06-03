@@ -31,12 +31,15 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    "vue/max-attributes-per-line": ["off", {
-      "singleline": 4,
-      "multiline": {
-        "max": 1,
-        "allowFirstLine": true
+    'vue/max-attributes-per-line': [
+      'off', {
+      'singleline': 4,
+      'multiline': {
+        'max': 1,
+        'allowFirstLine': true
       }
-    }]
+    }],
+    'vue/mustache-interpolation-spacing': 'off',
+    'space-in-parens': 'off'
   }
 }

@@ -23,8 +23,8 @@ export default {
     }
   },
   methods: {
-    gradeEvent (e) {
-      EventBus.$emit('gradeSelected', e)
+    gradeEvent ( e ) {
+      EventBus.$emit( 'gradeSelected', e )
     }
   }
 }
