@@ -218,5 +218,6 @@ export default {
 }
 .btnDisable {
   background-color: #0160c6;
+  cursor: default !important;
 }
 </style>

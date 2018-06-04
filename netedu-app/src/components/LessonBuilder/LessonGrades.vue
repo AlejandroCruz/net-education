@@ -1,7 +1,7 @@
 <template>
   <div id="lesson-grades">
-    <h2 class="card-title">Please select grade:</h2>
 
+    <h2 class="card-title">Please select grade:</h2>
     <div v-for="item in grades" :key="item.id">
       <div
         class="netedu-content-tab"
@@ -9,6 +9,7 @@
         {{ item.label }}
       </div>
     </div>
+
   </div>
 </template>
 

@@ -1,14 +1,17 @@
 <template>
   <div id="lesson-subjects">
-    <h2 class="card-title">Please select subject:</h2>
 
-    <div v-for="item in subjects" :key="item.id">
+    <h2 class="card-title">Please select subject:</h2>
+    <div class="netedu-content-wrapper" >
       <div
         class="netedu-content-tab"
+        v-for="item in subjects"
+        :key="item.id"
         @click="subjectEvent(item.label)">
         {{ item.label }}
       </div>
     </div>
+
   </div>
 </template>
 
@@ -33,11 +36,18 @@ export default {
 <style lang="scss" scoped>
 @import "../../main.scss";
 
+.netedu-content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .netedu-content-tab {
-  background-color: #d32f2ff3;
+  background-color: $netedu-red;
+  border-color: $netedu-red-border;
   border-radius: 5px;
-  color: rgba(255, 255, 255, 0.75);
-  margin: 10px 0;
+  color: $netedu-tab-text-color;
+  float: left;
+  margin: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
   width: 20%;
