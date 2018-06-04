@@ -70,8 +70,11 @@ export default {
       lessonGrade: null,
       lessonSubject: null,
       lessonTitle: null,
+      lessonCode: null,
       propKeyGrade: null,
       propKeySubject: null,
+      propKeyTitle: null,
+      propKeyCode: null,
       elementDisable: null,
       isOverflowPrev: null,
       isOverflowNext: null,
@@ -92,6 +95,8 @@ export default {
   mounted () {
     this.eventGradeSelected()
     this.eventSubjectSelected()
+    this.eventTitleInput()
+    this.eventCodeInput()
   },
   methods: {
     compareIndexToHeadings ( h ) {
@@ -100,27 +105,29 @@ export default {
     eventGradeSelected () {
       EventBus.$on( 'gradeSelected', ( e ) => {
         this._lessonGradeStore( e )
-          .then( this._lessonGradeVal())
+          .then( this._lessonGradeVal() )
           .then( this._propKeyGrade( this.lessonGrade ))
       })
     },
     eventSubjectSelected () {
       EventBus.$on( 'subjectSelected', ( e ) => {
         this._lessonSubjectStore( e )
-          .then( this._lessonSubjectVal())
+          .then( this._lessonSubjectVal() )
           .then( this._propKeySubject( this.lessonSubject ))
       })
     },
     eventTitleInput () {
-      EventBus.$on( 'titleInput', () => {
-        this.lessonTitle = this.$store.getters.getLessonTitle
-        this.lessonNewComplete[ 2 ] = true
+      EventBus.$on( 'titleInput', ( e ) => {
+        this._lessonTitleStore( e )
+          .then( this._lessonTitleVal() )
+          .then( this._propKeyTitle( this.lessonTitle ))
       })
     },
     eventCodeInput () {
-      EventBus.$on( 'codeInput', () => {
-        this.lessonCode = this.$store.getters.getLessonCode
-        this.lessonNewComplete[ 3 ] = true
+      EventBus.$on( 'codeInput', ( e ) => {
+        this._lessonCodeStore( e )
+          .then( this._lessonCodeVal() )
+          .then( this._propKeyCode( this.lessonCode ))
       })
     },
     nextSubComp () {
@@ -147,6 +154,12 @@ export default {
     _propKeySubject ( jObj ) {
       this.propKeySubject = Object.keys( jObj )[ 0 ]
     },
+    _propKeyTitle ( jObj ) {
+      this.propKeyTitle = Object.keys( jObj )[ 0 ]
+    },
+    _propKeyCode ( jObj ) {
+      this.propKeyCode = Object.keys( jObj )[ 0 ]
+    },
     _lessonGradeStore ( e ) {
       return new Promise( resolve => {
         this.$store.dispatch('setLessonGrade', { 'Grade': e })
@@ -157,6 +170,16 @@ export default {
         this.$store.dispatch('setLessonSubject', { 'Subject': e })
       })
     },
+    _lessonTitleStore ( e ) {
+      return new Promise( resolve => {
+        this.$store.dispatch('setLessonTitle', { 'Title': e })
+      })
+    },
+    _lessonCodeStore ( e ) {
+      return new Promise( resolve => {
+        this.$store.dispatch('setLessonCode', { 'Code': e })
+      })
+    },
     _lessonGradeVal () {
       this.lessonGrade = this.$store.getters.getLessonGrade
       this.lessonNewComplete[ 0 ] = true
@@ -164,6 +187,14 @@ export default {
     _lessonSubjectVal () {
       this.lessonSubject = this.$store.getters.getLessonSubject
       this.lessonNewComplete[ 1 ] = true
+    },
+    _lessonTitleVal () {
+      this.lessonTitle = this.$store.getters.getLessonTitle
+      this.lessonNewComplete[ 2 ] = true
+    },
+    _lessonCodeVal () {
+      this.lessonCode = this.$store.getters.getLessonCode
+      this.lessonNewComplete[ 3 ] = true
     }
   },
   components: {

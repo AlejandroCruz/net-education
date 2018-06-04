@@ -51,11 +51,11 @@ export default {
     titleAction ( t ) {
       window.sessionStorage.setItem( 'lessonTitle', t )
       this.$store.commit( 'setLessonTitle', t )
-      EventBus.$emit( 'titleInput' )
+      EventBus.$emit( 'titleInput', t )
     },
     codeAction ( c ) {
       window.sessionStorage.setItem( 'lessonCode', c )
-      EventBus.$emit( 'codeInput' )
+      EventBus.$emit( 'codeInput', c )
     }
   }
 }
