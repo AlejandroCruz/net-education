@@ -18,7 +18,7 @@ export default {
     }
   },
   mounted () {
-    this.lessonTitle = this.$store.getters.getLessonTitle
+    this.lessonTitle = window.sessionStorage.getItem('lessonTitle')
   }
 }
 </script>
