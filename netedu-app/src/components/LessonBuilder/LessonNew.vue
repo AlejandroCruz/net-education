@@ -107,11 +107,6 @@ export default {
     this.eventTitleInput()
     this.eventCodeInput()
   },
-  watch: {
-    lessonNewComplete () {
-      this.validateSelections()
-    }
-  },
   methods: {
     compareIndexToHeadings ( h ) {
       return this.subCompIndex === this.headings[ h ].id
@@ -163,6 +158,9 @@ export default {
       this.subCompIndex--
     },
     validateSelections () {
+      console.log('LessonNew>validateSelections -->:')
+      console.log(this.lessonNewComplete)
+      console.log('<--')
       let count = 0
       this.lessonNewComplete.forEach( element => {
         if ( element !== true ) {
@@ -209,18 +207,22 @@ export default {
     _lessonGradeVal () {
       this.lessonGrade = this.$store.getters.getLessonGrade
       this.lessonNewComplete[ 0 ] = true
+      this.validateSelections()
     },
     _lessonSubjectVal () {
       this.lessonSubject = this.$store.getters.getLessonSubject
       this.lessonNewComplete[ 1 ] = true
+      this.validateSelections()
     },
     _lessonTitleVal () {
       this.lessonTitle = this.$store.getters.getLessonTitle
       this.lessonNewComplete[ 2 ] = true
+      this.validateSelections()
     },
     _lessonCodeVal () {
       this.lessonCode = this.$store.getters.getLessonCode
       this.lessonNewComplete[ 3 ] = true
+      this.validateSelections()
     }
   },
   components: {
@@ -236,13 +238,11 @@ export default {
   clear: left;
   padding-top: 40px;
 }
-
 .card-footer {
   p > span {
     margin-right: 15px
   }
 }
-
 .btnDisable {
   background-color: #0160c6;
   cursor: default !important;
