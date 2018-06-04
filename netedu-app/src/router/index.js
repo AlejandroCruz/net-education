@@ -2,8 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import DashboardContent from '@/components/Dashboard/DashboardContent'
 import LessonBuildContent from '@/components/LessonBuilder/LessonBuildContent'
+import LessonForm from '@/components/LessonBuilder/LessonForm'
 
-Vue.use(Router)
+Vue.use( Router )
 
 export default new Router({
   routes: [
@@ -20,6 +21,11 @@ export default new Router({
       path: '/lesson-builder',
       name: 'LessonBuildContent',
       component: LessonBuildContent
+    },
+    {
+      path: '/lesson-builder/form',
+      name: 'LessonForm',
+      component: LessonForm
     }
   ]
 })

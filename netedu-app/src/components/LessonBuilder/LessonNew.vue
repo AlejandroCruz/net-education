@@ -24,33 +24,39 @@
       <div v-if="compareIndexToHeadings( 2 )">
         <LessonTitle/>
       </div>
-    </div>
 
-    <div class="cardFooter">
+      <div class="card-sub-body">
+        <a
+          class="btn btn-primary"
+          href="#"
+          @click="prevSubComp"
+          :class="{ btnDisable: isOverflowPrev }">
+          Previous
+        </a>
+        <a
+          class="btn btn-primary"
+          v-if="isLessonNewComplete"
+          :href="lessonFormLink">
+          Finish
+        </a>
+        <a
+          class="btn btn-primary"
+          href="#"
+          ref="skillsNext"
+          @click="nextSubComp"
+          :class="{ btnDisable: isOverflowNext }"
+          :disabled="elementDisable">
+          Next
+        </a>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
       <p>
-        <span v-if="lessonGrade" class="card-text">{{ propKeyGrade }}: {{ lessonGrade.Grade }}</span>
-        <span v-if="lessonSubject" class="card-text">> {{ propKeySubject }}: {{ lessonSubject.Subject }}</span>
-        <span v-if="lessonTitle" class="card-text">> {{ propKeyTitle }}: {{ lessonTitle.Title }}</span>
-        <span v-if="lessonCode" class="card-text">> {{ propKeyCode }}: {{ lessonCode.Code }}</span>
+        <span v-if="lessonGrade" class="card-text"><i class="fa fa-check-square"/> {{ propKeyGrade }}: {{ lessonGrade.Grade }}</span>
+        <span v-if="lessonSubject" class="card-text"><i class="fa fa-check-square"/> {{ propKeySubject }}: {{ lessonSubject.Subject }}</span>
+        <span v-if="lessonTitle" class="card-text"><i class="fa fa-check-square"/> {{ propKeyTitle }}: {{ lessonTitle.Title }}</span>
+        <span v-if="lessonCode" class="card-text"><i class="fa fa-check-square"/> {{ propKeyCode }}: {{ lessonCode.Code }}</span>
       </p>
-      <a
-        class="btn btn-primary"
-        href="#"
-        @click="prevSubComp"
-        :class="{ btnDisable: isOverflowPrev }">Previous
-      </a>
-      <!-- <a
-        class="btn btn-primary"
-        v-if="isSkillsNewComplete"
-        :href="linkSkillForm">Finish</a> -->
-      <a
-        class="btn btn-primary"
-        href="#"
-        ref="skillsNext"
-        @click="nextSubComp"
-        :class="{ btnDisable: isOverflowNext }"
-        :disabled="elementDisable">Next
-      </a>
     </div>
 
   </div>
@@ -61,6 +67,7 @@ import LessonGrades from './LessonGrades'
 import LessonSubjects from './LessonSubjects'
 import LessonTitle from './LessonTitle'
 import { Lesson } from './lessonDataModules'
+import { resources } from './lessonBuild.config'
 import { EventBus } from '@/main'
 
 export default {
@@ -86,7 +93,9 @@ export default {
         { lessonTitleHasValue: '' },
         { lessonCodeHasValue: '' }
       ],
-      subCompIndex: 1
+      isLessonNewComplete: false,
+      subCompIndex: 1,
+      lessonFormLink: resources.lessonFormLink
     }
   },
   created () {
@@ -97,6 +106,11 @@ export default {
     this.eventSubjectSelected()
     this.eventTitleInput()
     this.eventCodeInput()
+  },
+  watch: {
+    lessonNewComplete () {
+      this.validateSelections()
+    }
   },
   methods: {
     compareIndexToHeadings ( h ) {
@@ -147,6 +161,18 @@ export default {
         return
       }
       this.subCompIndex--
+    },
+    validateSelections () {
+      let count = 0
+      this.lessonNewComplete.forEach( element => {
+        if ( element !== true ) {
+          count++
+        }
+      })
+      if ( count === 0 ) {
+        this.isLessonNewComplete = true
+        EventBus.$emit( 'lessonNewCompleted', this.isLessonNewComplete )
+      }
     },
     _propKeyGrade ( jObj ) {
       this.propKeyGrade = Object.keys( jObj )[ 0 ]
@@ -206,16 +232,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cardFooter {
+.card-sub-body {
   clear: left;
   padding-top: 40px;
+}
 
-  p {
-    font-weight: bold;
-    padding: 10px;
-    text-align: left;
+.card-footer {
+  p > span {
+    margin-right: 15px
   }
 }
+
 .btnDisable {
   background-color: #0160c6;
   cursor: default !important;
