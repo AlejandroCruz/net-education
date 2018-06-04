@@ -3,8 +3,7 @@
     "Headings": [
       { "id": 1, "label": "Grades" },
       { "id": 2, "label": "Subjects" },
-      { "id": 3, "label": "Lectures" },
-      { "id": 4, "label": "Title" }
+      { "id": 3, "label": "Title" }
     ],
     "Grades": [
       { "id": 1, "label": "K" },

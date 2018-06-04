@@ -21,12 +21,17 @@
       <div v-if="compareIndexToHeadings( 1 )">
         <LessonSubjects/>
       </div>
+      <div v-if="compareIndexToHeadings( 2 )">
+        <LessonTitle/>
+      </div>
     </div>
 
     <div class="cardFooter">
       <p>
         <span v-if="lessonGrade" class="card-text">{{ propKeyGrade }}: {{ lessonGrade.Grade }}</span>
         <span v-if="lessonSubject" class="card-text">> {{ propKeySubject }}: {{ lessonSubject.Subject }}</span>
+        <span v-if="lessonTitle" class="card-text">> {{ propKeyTitle }}: {{ lessonTitle.Title }}</span>
+        <span v-if="lessonCode" class="card-text">> {{ propKeyCode }}: {{ lessonCode.Code }}</span>
       </p>
       <a
         class="btn btn-primary"
@@ -54,6 +59,7 @@
 <script>
 import LessonGrades from './LessonGrades'
 import LessonSubjects from './LessonSubjects'
+import LessonTitle from './LessonTitle'
 import { Lesson } from './lessonDataModules'
 import { EventBus } from '@/main'
 
@@ -63,6 +69,7 @@ export default {
       headings: null,
       lessonGrade: null,
       lessonSubject: null,
+      lessonTitle: null,
       propKeyGrade: null,
       propKeySubject: null,
       elementDisable: null,
@@ -73,7 +80,6 @@ export default {
       lessonNewComplete: [
         { lessonGradeHasValue: '' },
         { lessonSubjectHasValue: '' },
-        { lessonLectureHasValue: '' },
         { lessonTitleHasValue: '' },
         { lessonCodeHasValue: '' }
       ],
@@ -92,17 +98,29 @@ export default {
       return this.subCompIndex === this.headings[ h ].id
     },
     eventGradeSelected () {
-      EventBus.$on('gradeSelected', ( e ) => {
+      EventBus.$on( 'gradeSelected', ( e ) => {
         this._lessonGradeStore( e )
           .then( this._lessonGradeVal())
           .then( this._propKeyGrade( this.lessonGrade ))
       })
     },
     eventSubjectSelected () {
-      EventBus.$on('subjectSelected', ( e ) => {
+      EventBus.$on( 'subjectSelected', ( e ) => {
         this._lessonSubjectStore( e )
           .then( this._lessonSubjectVal())
           .then( this._propKeySubject( this.lessonSubject ))
+      })
+    },
+    eventTitleInput () {
+      EventBus.$on( 'titleInput', () => {
+        this.lessonTitle = this.$store.getters.getLessonTitle
+        this.lessonNewComplete[ 2 ] = true
+      })
+    },
+    eventCodeInput () {
+      EventBus.$on( 'codeInput', () => {
+        this.lessonCode = this.$store.getters.getLessonCode
+        this.lessonNewComplete[ 3 ] = true
       })
     },
     nextSubComp () {
@@ -145,12 +163,13 @@ export default {
     },
     _lessonSubjectVal () {
       this.lessonSubject = this.$store.getters.getLessonSubject
-      this.lessonNewComplete[ 0 ] = true
+      this.lessonNewComplete[ 1 ] = true
     }
   },
   components: {
     LessonGrades,
-    LessonSubjects
+    LessonSubjects,
+    LessonTitle
   }
 }
 </script>

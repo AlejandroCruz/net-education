@@ -2,6 +2,8 @@ export default {
   state: {
     lessonGrade: null,
     lessonSubject: null,
+    lessonTitle: null,
+    lessonCode: null,
     lessonBuildData: null
   },
   mutations: {
@@ -10,6 +12,12 @@ export default {
     },
     setLessonSubject ( state, payload ) {
       state.lessonSubject = payload
+    },
+    setLessonTitle ( state, payload ) {
+      state.lessonTitle = payload
+    },
+    setLessonCode ( state, payload ) {
+      state.lessonCode = payload
     },
     setLessonBuildData ( state, payload ) {
     }
@@ -21,6 +29,12 @@ export default {
     setLessonSubject ({ commit }, e ) {
       commit( 'setLessonSubject', e )
     },
+    setLessonTitle ({ commit }, e ) {
+      commit( 'setLessonTitle', e )
+    },
+    setLessonCode ({ commit }, e ) {
+      commit( 'setLessonCode', e )
+    },
     setLessonBuildData ({ commit }, e ) {
       commit( 'setLessonBuildData', e )
     }
@@ -31,6 +45,12 @@ export default {
     },
     getLessonSubject ( state ) {
       return state.lessonSubject
+    },
+    getLessonTitle ( state ) {
+      return state.lessonTitle
+    },
+    getLessonCode ( state ) {
+      return state.lessonCode
     },
     getLessonBuildData ( state ) {
       return state.lessonBuildData
