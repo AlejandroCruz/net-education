@@ -6,9 +6,21 @@
         <img class="img-logo img-fluid" :src="logo.icon" :alt="logo.alt">
         <span>NetEducation</span>
       </a>
+      <button
+        class="navbar-toggler navbar-toggler-right"
+        type="button"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        data-target="#navbarResponsive"
+        data-toggle="collapse">
+        <span class="navbar-toggler-icon"/>
+      </button>
       <div id="navbarResponsive" class="collapse navbar-collapse">
+
         <app-topnav/>
         <app-sidenav/>
+
       </div>
     </nav>
   </div>

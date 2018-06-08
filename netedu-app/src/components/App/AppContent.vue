@@ -1,18 +1,26 @@
 <template>
-  <div id="app-content" class="content-wrapper">
-    <div class="container-fluid">
+  <div id="app-content">
 
-      <!-- Breadcrumbs
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
-        </li>
-        <li class="breadcrumb-item active">Chart</li>
-      </ol> -->
+    <div class="content-wrapper">
+      <div class="container-fluid">
 
-      <router-view/>
+        <!-- Breadcrumbs
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Chart</li>
+        </ol> -->
 
+        <router-view/>
+
+      </div>
     </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"/>
+    </a>
+
   </div>
 </template>
 

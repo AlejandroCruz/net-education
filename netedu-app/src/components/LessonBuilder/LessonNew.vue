@@ -8,7 +8,7 @@
             :id="'lessonNewHeading-' + item.id"
             :class="{active:item.id === subCompIndex}"
             class="nav-link">
-            {{ item.id}}. {{ item.label }}
+            {{ item.id }}. {{ item.label }}
           </span>
         </li>
       </ul>
@@ -24,7 +24,6 @@
       <div v-if="compareIndexToHeadings( 2 )">
         <LessonTitle/>
       </div>
-
       <div class="card-sub-body">
         <a
           class="btn btn-primary"
@@ -50,6 +49,7 @@
         </a>
       </div>
     </div>
+
     <div class="card-footer text-muted">
       <p>
         <span v-if="lessonGrade" class="card-text"><i class="fa fa-check-square"/> {{ propKeyGrade }}: {{ lessonGrade.Grade }}</span>
@@ -85,8 +85,6 @@ export default {
       elementDisable: null,
       isOverflowPrev: null,
       isOverflowNext: null,
-      jsonKey: null,
-      jsonVal: null,
       lessonNewComplete: [
         { lessonGradeHasValue: '' },
         { lessonSubjectHasValue: '' },
