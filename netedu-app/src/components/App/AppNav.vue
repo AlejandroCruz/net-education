@@ -30,6 +30,7 @@
 import AppTopnav from './AppTopnav'
 import AppSidenav from './AppSidenav'
 import { resources } from './app.config'
+import { EventBus } from '@/main'
 
 export default {
   data () {
@@ -37,9 +38,20 @@ export default {
       logo: {
         address: '/#/',
         alt: 'Net Education ( icon )',
-        icon: resources.primaryLogo,
-        toggleNav: null
+        icon: resources.primaryLogo
       }
+    }
+  },
+  mounted () {
+    this.collapseNav()
+  },
+  methods: {
+    collapseNav () {
+      EventBus.$on('navClick', ( e ) => {
+        console.log('AppNav>collapseNav --> event:')
+        console.log(e)
+        console.log('<--')
+      })
     }
   },
   components: {

@@ -2,8 +2,16 @@
   <div id="menu-main">
 
     <ul id="exampleAccordion" class="navbar-nav navbar-sidenav">
-      <li v-for="item in menu" :key="item.id" class="nav-item" data-toggle="tooltip" data-placement="right">
-        <a class="nav-link" :href="item.address">
+      <li
+        class="nav-item"
+        data-toggle="tooltip"
+        data-placement="right"
+        v-for="item in menu"
+        :key="item.id">
+        <a
+          class="nav-link"
+          :href="item.address"
+          @click="navClick">
           <i :class="item.icon"/>
           <span class="nav-link-text">{{ item.tab }}</span>
         </a>
@@ -14,6 +22,8 @@
 </template>
 
 <script>
+import { EventBus } from '@/main'
+
 export default {
   data () {
     return {
@@ -24,6 +34,18 @@ export default {
         { id: 3, tab: 'Exam', address: '/#/exam', icon: 'fa fa-clipboard' },
         { id: 4, tab: 'Lesson>Form Dev', address: '/#/lesson-builder/form', icon: 'fa fa-ban' }
       ]
+    }
+  },
+
+  methods: {
+    navClick () {
+      console.log('MenuMain>navClick --> screen size:')
+      console.log(this.$window.width)
+      console.log('<--')
+
+      if ( this.$window.width < 992 ) {
+        EventBus.$emit( 'navClick', true )
+      }
     }
   }
 }

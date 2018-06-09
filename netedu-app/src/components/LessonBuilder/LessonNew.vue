@@ -3,11 +3,14 @@
 
     <div class="card-header">
       <ul class="nav nav-pills card-header-pills">
-        <li class="nav-item" v-for="item in headings" :key="item.id">
+        <li
+          class="nav-item"
+          v-for="item in headings"
+          :key="item.id">
           <span
+            class="nav-link"
             :id="'lessonNewHeading-' + item.id"
-            :class="{active:item.id === subCompIndex}"
-            class="nav-link">
+            :class="{active:item.id === subCompIndex}">
             {{ item.id }}. {{ item.label }}
           </span>
         </li>
@@ -28,8 +31,8 @@
         <a
           class="btn btn-primary"
           href="#"
-          @click="prevSubComp"
-          :class="{ btnDisable: isOverflowPrev }">
+          :class="{ btnDisable: isOverflowPrev }"
+          @click="prevSubComp">
           Previous
         </a>
         <a
@@ -42,9 +45,9 @@
           class="btn btn-primary"
           href="#"
           ref="skillsNext"
-          @click="nextSubComp"
           :class="{ btnDisable: isOverflowNext }"
-          :disabled="elementDisable">
+          :disabled="elementDisable"
+          @click="nextSubComp">
           Next
         </a>
       </div>
@@ -52,10 +55,18 @@
 
     <div class="card-footer text-muted">
       <p>
-        <span v-if="lessonGrade" class="card-text"><i class="fa fa-check-square"/> {{ propKeyGrade }}: {{ lessonGrade.Grade }}</span>
-        <span v-if="lessonSubject" class="card-text"><i class="fa fa-check-square"/> {{ propKeySubject }}: {{ lessonSubject.Subject }}</span>
-        <span v-if="lessonTitle" class="card-text"><i class="fa fa-check-square"/> {{ propKeyTitle }}: {{ lessonTitle.Title }}</span>
-        <span v-if="lessonCode" class="card-text"><i class="fa fa-check-square"/> {{ propKeyCode }}: {{ lessonCode.Code }}</span>
+        <span v-if="lessonGrade" class="card-text">
+          <i class="fa fa-check-square"/> {{ propKeyGrade }}: {{ lessonGrade.Grade }}
+        </span>
+        <span v-if="lessonSubject" class="card-text">
+          <i class="fa fa-check-square"/> {{ propKeySubject }}: {{ lessonSubject.Subject }}
+        </span>
+        <span v-if="lessonTitle" class="card-text">
+          <i class="fa fa-check-square"/> {{ propKeyTitle }}: {{ lessonTitle.Title }}
+        </span>
+        <span v-if="lessonCode" class="card-text">
+          <i class="fa fa-check-square"/> {{ propKeyCode }}: {{ lessonCode.Code }}
+        </span>
       </p>
     </div>
 
@@ -156,9 +167,6 @@ export default {
       this.subCompIndex--
     },
     validateSelections () {
-      console.log('LessonNew>validateSelections -->:')
-      console.log(this.lessonNewComplete)
-      console.log('<--')
       let count = 0
       this.lessonNewComplete.forEach( element => {
         if ( element !== true ) {
@@ -184,22 +192,22 @@ export default {
     },
     _lessonGradeStore ( e ) {
       return new Promise( resolve => {
-        this.$store.dispatch('setLessonGrade', { 'Grade': e })
+        this.$store.dispatch( 'setLessonGrade', { 'Grade': e })
       })
     },
     _lessonSubjectStore ( e ) {
       return new Promise( resolve => {
-        this.$store.dispatch('setLessonSubject', { 'Subject': e })
+        this.$store.dispatch( 'setLessonSubject', { 'Subject': e })
       })
     },
     _lessonTitleStore ( e ) {
       return new Promise( resolve => {
-        this.$store.dispatch('setLessonTitle', { 'Title': e })
+        this.$store.dispatch( 'setLessonTitle', { 'Title': e })
       })
     },
     _lessonCodeStore ( e ) {
       return new Promise( resolve => {
-        this.$store.dispatch('setLessonCode', { 'Code': e })
+        this.$store.dispatch( 'setLessonCode', { 'Code': e })
       })
     },
     _lessonGradeVal () {

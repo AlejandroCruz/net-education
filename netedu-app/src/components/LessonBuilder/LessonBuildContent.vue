@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     showForm () {
-      EventBus.$on('lessonNewCompleted', ( e ) => {
+      EventBus.$on( 'lessonNewCompleted', ( e ) => {
         this.showLessonForm = e
       })
     }
