@@ -6,15 +6,16 @@ import router from './router'
 import jQuery from 'jquery/dist/jquery.min'
 import fontawesome from '@fortawesome/fontawesome'
 import faSolids from '@fortawesome/fontawesome-free-solid'
-import UtilWindowSize from './utils/UtilWindowSize'
+// import windowSize from './utils/UtilWindowSize'
 import { store } from './store/index'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'startbootstrap-sb-admin/css/sb-admin.css'
 
-fontawesome.library.add(faSolids)
-global.$jQuery = jQuery
 Vue.config.productionTip = false
+fontawesome.library.add( faSolids )
+global.$jQuery = jQuery
+global.$windowSize = 'windowSize'
 
 export const EventBus = new Vue()
 
@@ -23,6 +24,6 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App, UtilWindowSize },
+  components: { App },
   template: '<App/>'
 })

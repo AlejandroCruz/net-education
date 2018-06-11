@@ -22,7 +22,8 @@
 </template>
 
 <script>
-import { EventBus } from '@/main'
+// import util from '@/utils/UtilWindowSize'
+// import { EventBus } from '@/main'
 
 export default {
   data () {
@@ -36,16 +37,16 @@ export default {
       ]
     }
   },
-
   methods: {
     navClick () {
-      console.log('MenuMain>navClick --> screen size:')
-      console.log(this.$window.width)
+      console.log('MenuMain>navClick --> windowSize:')
+      console.log( this.$store.getters.getWindowSize.h )
+      console.log( this.$store.getters.getWindowSize.w )
       console.log('<--')
 
-      if ( this.$window.width < 992 ) {
-        EventBus.$emit( 'navClick', true )
-      }
+      // if ( this.$window.width < 992 ) {
+      //   EventBus.$emit( 'navClick', true )
+      // }
     }
   }
 }
