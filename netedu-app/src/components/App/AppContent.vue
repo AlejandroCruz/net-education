@@ -15,6 +15,7 @@
         <router-view/>
 
       </div>
+      <footer class="sticky-footer">{{ appTitle }} {{ dateFooter }}</footer>
     </div>
 
     <a class="scroll-to-top rounded" href="#page-top">
@@ -24,12 +25,28 @@
   </div>
 </template>
 
+<script>
+import { resources } from './app.config'
+
+export default {
+  data () {
+    return {
+      appTitle: resources.appTitle,
+      dateFooter: null
+    }
+  },
+  mounted () {
+    this.dateFooter = new Date().getFullYear()
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 #app-content {
   background-color: fff;
   text-align: center;
 }
-// .content-wrapper {
-//   min-height: calc(100vh - 56px - 56px);
-// }
+.content-wrapper {
+  min-height: calc(100vh - 56px - 55px) !important;
+}
 </style>
