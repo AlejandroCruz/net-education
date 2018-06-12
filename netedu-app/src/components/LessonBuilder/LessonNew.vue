@@ -240,6 +240,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.card-body  {
+  @media (min-width: 992px) {
+    min-height: 272px;
+  }
+}
 .card-sub-body {
   clear: left;
   padding-top: 40px;

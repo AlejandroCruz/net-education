@@ -1,6 +1,6 @@
 <template>
   <div id="lesson-form">
-    <label>Lesson:</label>
+    <h3>Lesson:</h3>
     <input
       v-model='lessonTitle'
       type="text"
@@ -22,3 +22,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "../../main";
+
+#lesson-form {
+  text-align: left;
+
+  input {
+    color: #fff;
+    background-color: $netedu-blue;
+  }
+}
+</style>

@@ -42,11 +42,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../main';
+
 #app-content {
   background-color: fff;
   text-align: center;
 }
 .content-wrapper {
   min-height: calc(100vh - 56px - 55px) !important;
+}
+
+#app-content {
+  color: $nav-dark-accent;
 }
 </style>

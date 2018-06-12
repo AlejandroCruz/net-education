@@ -1,10 +1,12 @@
 <template>
   <div id="lesson-grades">
 
-    <h2 class="card-title">Please select grade:</h2>
-    <div v-for="item in grades" :key="item.id">
+    <h3 class="card-title">Please select grade:</h3>
+
+    <div class="flex-container" >
       <div
-        class="netedu-content-tab"
+        v-for="item in grades"
+        :key="item.id"
         @click="gradeEvent(item.label)">
         {{ item.label }}
       </div>
@@ -34,21 +36,30 @@ export default {
 <style lang="scss" scoped>
 @import "../../main.scss";
 
-.netedu-content-tab {
-  background-color: $netedu-red;
-  border-color: $netedu-red-border;
-  border-radius: 5px;
-  color: $netedu-tab-text-color;
-  float: left;
-  margin: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 10%;
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  @media (min-width: 576px) {
+    justify-content: flex-start;
+  }
 
-  &:hover {
-    cursor: pointer;
-    background-color: $netedu-red-hover;
-    border-color: $netedu-red-hover-border;
+  div {
+    background-color: $netedu-red;
+    border-color: $netedu-red-border;
+    border-radius: 5px;
+    color: $netedu-tab-text-color;
+    margin: 5px;
+    min-width: 55px;
+    padding: 10px 0;
+    width: 10%;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $netedu-red-hover;
+      border-color: $netedu-red-hover-border;
+    }
   }
 }
+
 </style>
