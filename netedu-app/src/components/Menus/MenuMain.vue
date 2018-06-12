@@ -39,14 +39,11 @@ export default {
   },
   methods: {
     navClick () {
-      console.log('MenuMain>navClick --> windowSize:')
-      console.log( this.$store.getters.getWindowSize.h )
-      console.log( this.$store.getters.getWindowSize.w )
-      console.log('<--')
+      if ( this.$store.getters.getWindowSize.w < 992 ) {
+        let hamburger = document.getElementById( 'hamburger' )
 
-      // if ( this.$window.width < 992 ) {
-      //   EventBus.$emit( 'navClick', true )
-      // }
+        hamburger.click()
+      }
     }
   }
 }

@@ -7,6 +7,7 @@
         <span>NetEducation</span>
       </a>
       <button
+        id="hamburger"
         class="navbar-toggler navbar-toggler-right"
         type="button"
         aria-controls="navbarResponsive"
@@ -48,9 +49,6 @@ export default {
   methods: {
     collapseNav () {
       EventBus.$on('navClick', ( e ) => {
-        console.log('AppNav>collapseNav --> event:')
-        console.log(e)
-        console.log('<--')
       })
     }
   },
