@@ -36,7 +36,7 @@ export default {
 @import "../../main.scss";
 
 #lesson-subjects {
-  p {
+  p:first-child {
       font-size: 1.5rem;
 
       @media (min-width: 992px) {

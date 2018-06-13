@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 #lesson-title {
-    p {
+    p:first-child {
       font-size: 1.5rem;
 
       @media (min-width: 992px) {

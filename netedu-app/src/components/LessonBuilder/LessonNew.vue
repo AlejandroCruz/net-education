@@ -11,7 +11,7 @@
             class="nav-link"
             :id="'lessonNewHeading-' + item.id"
             :class="{ active:item.id === subCompIndex }">
-            {{ item.id }}. {{ item.label }}
+            {{ item.label }}
           </span>
         </li>
       </ul>
@@ -241,11 +241,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-body  {
-  @media (min-width: 992px) {
-    min-height: 200px;
-  }
-}
 .card-sub-body {
   clear: left;
   padding: 20px 0;
@@ -258,5 +253,16 @@ export default {
 .btnDisable {
   background-color: #0160c6;
   cursor: default !important;
+}
+
+@media (min-width: 992px) {
+  .card-body  {
+    min-height: 200px;
+  }
+}
+@media (max-width: 576px) {
+  span[id*=lessonNewHeading] {
+    padding: 0.2rem 0.4rem;
+  }
 }
 </style>

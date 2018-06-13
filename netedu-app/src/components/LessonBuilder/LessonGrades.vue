@@ -37,7 +37,7 @@ export default {
 @import "../../main.scss";
 
 #lesson-grades {
-  p {
+  p:first-child {
       font-size: 1.5rem;
 
       @media (min-width: 992px) {
