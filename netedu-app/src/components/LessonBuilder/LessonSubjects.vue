@@ -46,6 +46,7 @@ export default {
     border-radius: 5px;
     color: $netedu-tab-text-color;
     margin: 5px;
+    min-width: 70px;
     padding: 10px 0;
     width: 10%;
 

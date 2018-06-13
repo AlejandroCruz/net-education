@@ -65,15 +65,15 @@ export default {
 nav {
   a:first-child {
     margin-right: 0;
-    padding: 0.3125rem 1rem 0 0;
+    padding: 0 0 0.5em 0;
 
     img.img-logo {
       height: auto;
-      width: 2.25em;
+      width: 2em;
     }
     span {
       color: $netedu-gold;
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       vertical-align: bottom;
     }
   }

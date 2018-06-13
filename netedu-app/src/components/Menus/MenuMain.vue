@@ -58,6 +58,9 @@ export default {
     overflow-y: auto;
   }
 
+  li:first-child {
+    margin-top: 5px
+  }
   li {
     border-top: 1px solid #2a2f35;
       &:last-child {
