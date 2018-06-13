@@ -4,8 +4,7 @@
     <input
       v-model='lessonTitle'
       type="text"
-      class="form-control"
-      placeholder="Edit Title">
+      class="form-control">
     <hr>
   </div>
 </template>
@@ -30,7 +29,7 @@ export default {
   text-align: left;
 
   input {
-    color: #fff;
+    color: #fff !important;
     background-color: $netedu-blue;
   }
 }

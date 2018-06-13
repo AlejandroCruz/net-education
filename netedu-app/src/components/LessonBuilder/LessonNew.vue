@@ -10,7 +10,7 @@
           <span
             class="nav-link"
             :id="'lessonNewHeading-' + item.id"
-            :class="{active:item.id === subCompIndex}">
+            :class="{ active:item.id === subCompIndex }">
             {{ item.id }}. {{ item.label }}
           </span>
         </li>
@@ -27,30 +27,31 @@
       <div v-if="compareIndexToHeadings( 2 )">
         <LessonTitle/>
       </div>
-      <div class="card-sub-body">
-        <a
-          class="btn btn-primary"
-          href="#"
-          :class="{ btnDisable: isOverflowPrev }"
-          @click="prevSubComp">
-          Previous
-        </a>
-        <a
-          class="btn btn-primary"
-          v-if="isLessonNewComplete"
-          :href="lessonFormLink">
-          Finish
-        </a>
-        <a
-          class="btn btn-primary"
-          href="#"
-          ref="skillsNext"
-          :class="{ btnDisable: isOverflowNext }"
-          :disabled="elementDisable"
-          @click="nextSubComp">
-          Next
-        </a>
-      </div>
+    </div>
+
+    <div class="card-sub-body">
+      <a
+        class="btn btn-primary"
+        href="#"
+        :class="{ btnDisable: isOverflowPrev }"
+        @click="prevSubComp">
+        Previous
+      </a>
+      <a
+        class="btn btn-primary"
+        v-if="isLessonNewComplete"
+        :href="lessonFormLink">
+        Finish
+      </a>
+      <a
+        class="btn btn-primary"
+        href="#"
+        ref="skillsNext"
+        :class="{ btnDisable: isOverflowNext }"
+        :disabled="elementDisable"
+        @click="nextSubComp">
+        Next
+      </a>
     </div>
 
     <div class="card-footer text-muted">
@@ -242,12 +243,12 @@ export default {
 <style lang="scss" scoped>
 .card-body  {
   @media (min-width: 992px) {
-    min-height: 272px;
+    min-height: 200px;
   }
 }
 .card-sub-body {
   clear: left;
-  padding-top: 40px;
+  padding: 20px 0;
 }
 .card-footer {
   p > span {

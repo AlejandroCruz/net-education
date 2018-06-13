@@ -1,7 +1,7 @@
 <template>
   <div id="lesson-grades">
 
-    <h3 class="card-title">Please select grade:</h3>
+    <p class="card-title">Please select grade:</p>
 
     <div class="flex-container" >
       <div
@@ -36,6 +36,15 @@ export default {
 <style lang="scss" scoped>
 @import "../../main.scss";
 
+#lesson-grades {
+  p {
+      font-size: 1.5rem;
+
+      @media (min-width: 992px) {
+      font-size: 1.75rem;
+    }
+  }
+}
 .flex-container {
   display: flex;
   flex-flow: row wrap;
@@ -61,5 +70,4 @@ export default {
     }
   }
 }
-
 </style>

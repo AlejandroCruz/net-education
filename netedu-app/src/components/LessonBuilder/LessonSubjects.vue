@@ -1,7 +1,7 @@
 <template>
   <div id="lesson-subjects">
 
-    <h3 class="card-title">Please select subject:</h3>
+    <p class="card-title">Please select subject:</p>
     <div class="flex-container" >
       <div
         v-for="item in subjects"
@@ -35,6 +35,15 @@ export default {
 <style lang="scss" scoped>
 @import "../../main.scss";
 
+#lesson-subjects {
+  p {
+      font-size: 1.5rem;
+
+      @media (min-width: 992px) {
+      font-size: 1.75rem;
+    }
+  }
+}
 .flex-container {
   display: flex;
   flex-flow: row wrap;
