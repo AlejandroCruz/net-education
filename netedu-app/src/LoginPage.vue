@@ -1,7 +1,7 @@
 <template>
-  <div id="login-content" v-if="pageName()">
+  <div id="login-page" v-if="pageName()">
 
-    <img class="mb-4" :src="logo.icon" alt="" width="300">
+    <img class="mb-4" :src="logo.icon" alt="" width="100">
     <h1>Login</h1>
 
   </div>
@@ -11,11 +11,9 @@
 import logo from '@/assets/logo-prime.png'
 
 export default {
-  name: 'LoginContent',
   data () {
     return {
       logo: {
-        address: '/#/',
         alt: 'Net Education ( icon )',
         icon: logo
       }
@@ -37,7 +35,7 @@ export default {
   // },
   methods: {
     pageName () {
-      if (this.$route.name === 'LoginContent') {
+      if (this.$route.name === 'LoginPage') {
         return true
       }
     }
@@ -46,4 +44,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#login-page {
+  color: white;
+  text-align: center;
+  // z-index: 1021;
+}
 </style>

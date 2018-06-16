@@ -4,7 +4,7 @@ import DashboardContent from '@/components/Dashboard/DashboardContent'
 import LessonBuildContent from '@/components/LessonBuilder/LessonBuildContent'
 import LessonForm from '@/components/LessonBuilder/LessonForm'
 import HelloWorld from '@/components/HelloWorld'
-import LoginContent from '../LoginContent'
+import LoginPage from '../LoginPage'
 import ResetPassword from '@/ResetPassword'
 
 Vue.use( Router )
@@ -36,8 +36,8 @@ export default new Router({
     },
     {
       path: '/login',
-      name: 'LoginContent',
-      component: LoginContent
+      name: 'LoginPage',
+      component: LoginPage
     },
     {
       path: '/reset',

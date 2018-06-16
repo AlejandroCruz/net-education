@@ -1,13 +1,19 @@
 <template>
-  <div id="app" v-if="pageName()">
-    <AppNav/>
-    <AppContent/>
+  <div id="app">
+    <div v-if="pageName()">
+      <AppNav/>
+      <AppContent/>
+    </div>
+    <div v-else>
+      <login-page/>
+    </div>
   </div>
 </template>
 
 <script>
 import AppContent from './components/App/AppContent'
 import AppNav from './components/App/AppNav'
+import LoginPage from './LoginPage'
 
 export default {
   name: 'App',
@@ -36,7 +42,8 @@ export default {
   },
   components: {
     AppNav,
-    AppContent
+    AppContent,
+    LoginPage
   }
 }
 </script>
