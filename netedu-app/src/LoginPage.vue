@@ -2,13 +2,14 @@
   <div id="login-page" v-if="pageName()">
 
     <img class="mb-4" :src="logo.icon" alt="" width="100">
-    <h1>Login</h1>
+    <login-content/>
 
   </div>
 </template>
 
 <script>
 import logo from '@/assets/logo-prime.png'
+import LoginContent from '@/components/Login/LoginContent'
 
 export default {
   data () {
@@ -19,20 +20,23 @@ export default {
       }
     }
   },
-  // computed: {
-  //   user () {
-  //     return this.$store.getters.getUser
-  //   }
-  // },
-  // watch: {
-  //   user (value) {
-  //     if (value !== null && value !== undefined) {
-  //       this.$router.push('/')
-  //     } else {
-  //       this.$router.push('/login')
-  //     }
-  //   }
-  // },
+  components: {
+    LoginContent
+  },
+  /* computed: {
+    user () {
+      return this.$store.getters.getUser
+    }
+  },
+  watch: {
+    user (value) {
+      if (value !== null && value !== undefined) {
+        this.$router.push('/')
+      } else {
+        this.$router.push('/login')
+      }
+    }
+  }, */
   methods: {
     pageName () {
       if (this.$route.name === 'LoginPage') {

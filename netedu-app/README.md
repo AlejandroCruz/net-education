@@ -12,6 +12,7 @@ CMS for educational test and record
 - chart.js [[⇗]](https://www.chartjs.org/)
 - startbootstrap-sb-admin [[⇗]](https://github.com/BlackrockDigital/startbootstrap-sb-admin)
 - vuex
+- simple-vue-validator [[⇗]](http://simple-vue-validator.maijin.info/#installation)
 
 ### Sample:
 
