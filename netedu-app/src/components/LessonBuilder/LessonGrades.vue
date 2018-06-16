@@ -45,6 +45,7 @@ export default {
     }
   }
 }
+
 .flex-container {
   display: flex;
   flex-flow: row wrap;

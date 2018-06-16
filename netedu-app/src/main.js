@@ -2,11 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import LoginContent from './LoginContent'
 import router from './router'
 import jQuery from 'jquery/dist/jquery.min'
 import fontawesome from '@fortawesome/fontawesome'
 import faSolids from '@fortawesome/fontawesome-free-solid'
-// import windowSize from './utils/UtilWindowSize'
 import { store } from './store/index'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -26,4 +26,13 @@ new Vue({
   store,
   components: { App },
   template: '<App/>'
+})
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#login-content',
+  router,
+  store,
+  components: { LoginContent },
+  template: '<login-content/>'
 })

@@ -4,6 +4,8 @@ import DashboardContent from '@/components/Dashboard/DashboardContent'
 import LessonBuildContent from '@/components/LessonBuilder/LessonBuildContent'
 import LessonForm from '@/components/LessonBuilder/LessonForm'
 import HelloWorld from '@/components/HelloWorld'
+import LoginContent from '../LoginContent'
+import ResetPassword from '@/ResetPassword'
 
 Vue.use( Router )
 
@@ -31,6 +33,16 @@ export default new Router({
       path: '/lesson-builder/form',
       name: 'LessonForm',
       component: LessonForm
+    },
+    {
+      path: '/login',
+      name: 'LoginContent',
+      component: LoginContent
+    },
+    {
+      path: '/reset',
+      name: 'ResetPassword',
+      component: ResetPassword
     }
   ]
 })

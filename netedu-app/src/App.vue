@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-if="pageName()">
     <AppNav/>
     <AppContent/>
   </div>
@@ -23,6 +23,15 @@ export default {
         window.innerHeight,
         window.innerWidth
       ])
+    },
+    pageName () {
+      let route = this.$route.path
+
+      if (route === '/login') {
+        return false
+      } else {
+        return true
+      }
     }
   },
   components: {

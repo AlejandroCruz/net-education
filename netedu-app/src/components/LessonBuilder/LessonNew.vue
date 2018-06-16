@@ -255,14 +255,14 @@ export default {
   cursor: default !important;
 }
 
-@media (min-width: 992px) {
-  .card-body  {
-    min-height: 200px;
-  }
-}
 @media (max-width: 576px) {
   span[id*=lessonNewHeading] {
     padding: 0.2rem 0.4rem;
+  }
+}
+@media (min-width: 992px) {
+  .card-body  {
+    min-height: 200px;
   }
 }
 </style>
