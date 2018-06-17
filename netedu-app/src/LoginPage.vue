@@ -2,6 +2,7 @@
   <div id="login-page" v-if="pageName()">
 
     <img class="mb-4" :src="logo.icon" alt="" width="100">
+    <h1>Net Education</h1>
     <login-content/>
 
   </div>
