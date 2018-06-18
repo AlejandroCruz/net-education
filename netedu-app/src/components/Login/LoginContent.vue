@@ -1,7 +1,7 @@
 <template>
   <div id="login-content">
     <form class="needs-validation" novalidate>
-      <h1 class="h3 mb-3 font-weight-normal">Please log in:</h1>
+      <h3 class="mb-3 font-weight-normal">Please log in:</h3>
 
       <div class="form-group">
         <input type="email" id="loginEmail" class="form-control" v-model="email" placeholder="Email" required>
@@ -56,6 +56,8 @@ export default {
   }
 
   footer {
+    font-size: 1rem;
+
     a:hover {
       text-decoration-line: none;
     }

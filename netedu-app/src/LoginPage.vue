@@ -1,7 +1,7 @@
 <template>
   <div id="login-page" v-if="pageName()">
 
-    <img class="mb-4" :src="logo.icon" alt="" width="100">
+    <img :src="logo.icon" alt="logo">
     <h1>Net Education</h1>
     <login-content/>
 
@@ -51,7 +51,13 @@ export default {
 <style lang="scss" scoped>
 #login-page {
   color: white;
+  min-width: 320px;
   text-align: center;
   // z-index: 1021;
+
+  img {
+    margin-bottom: 1rem;
+    width: 5rem;
+  }
 }
 </style>
