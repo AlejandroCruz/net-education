@@ -13,6 +13,7 @@ CMS for educational test and record
 - startbootstrap-sb-admin [[⇗]](https://github.com/BlackrockDigital/startbootstrap-sb-admin)
 - vuex
 - simple-vue-validator [[⇗]](http://simple-vue-validator.maijin.info/#installation)
+- Google Firebase
 
 ### Sample:
 

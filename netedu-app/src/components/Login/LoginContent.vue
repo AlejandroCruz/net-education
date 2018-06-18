@@ -1,6 +1,6 @@
 <template>
   <div id="login-content">
-    <form class="needs-validation" novalidate>
+    <form class="needs-validation" @submit.prevent="onSignin" novalidate>
 
       <div v-if="resetMode">
         <h3 class="mb-3 font-weight-normal">Enter email to send new password:</h3>
@@ -82,6 +82,9 @@ export default {
       console.log('LoginContent>resetPass --> this.resetMode:')
       console.log(this.resetMode)
       console.log('<--')
+    },
+    onSignin () {
+      this.$store.dispatch('setUser', { email: this.email, password: this.password })
     }
   }
 }
