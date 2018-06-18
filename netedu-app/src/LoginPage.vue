@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 #login-page {
   color: white;
-  min-width: 320px;
+  min-width: 251px;
   text-align: center;
   // z-index: 1021;
 
