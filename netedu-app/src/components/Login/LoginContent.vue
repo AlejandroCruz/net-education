@@ -46,7 +46,7 @@
       </div>
 
       <footer class="form-group">
-        <a v-if="resetMode" @click="resetPass">Login</a>
+        <a href="#/login" v-if="resetMode" @click="resetPass">Login</a>
         <a v-else @click="resetPass">Reset password</a>
         <!-- <a :href="resetLink">Reset password</a> -->
       </footer>
@@ -69,7 +69,6 @@ export default {
     return {
       email: null,
       password: null,
-      resetLink: '#/reset',
       resetMode: false
     }
   },
@@ -110,6 +109,7 @@ export default {
 
     a {
       color: #007bff;
+      cursor: pointer;
       text-decoration-line: none;
 
       &:hover {
